@@ -16,6 +16,6 @@ public class App
         System.out.println("Peso: " + boizinho.getPeso());
         System.out.println("Tomou Vacina: " + boizinho.getTomouVacina() != null ? "Seu boizinho é vacinado e feliz" : "Falta vacina");
         //Tábatha testando 
-        //Teste do Fork jkhjhk
+        //Teste do Fork
     }
 }
