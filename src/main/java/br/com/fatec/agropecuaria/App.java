@@ -12,9 +12,9 @@ public class App
         Boizinho boizinho = boizinhoService.cadastrarBoi("Brutus", 1500.00, true);
         
         System.out.println("Aqui está seu gado");
-        System.out.println(boizinho.getNome());
-        System.out.println(boizinho.getPeso());
-        System.out.println(boizinho.getTomouVacina() ? "Seu boizinho é vacinado e feliz" : "Falta vacina");
+        System.out.println("Nome: " + boizinho.getNome());
+        System.out.println("Peso: " + boizinho.getPeso());
+        System.out.println("Tomou Vacina: " + boizinho.getTomouVacina() != null ? "Seu boizinho é vacinado e feliz" : "Falta vacina");
         //Tábatha testando 
         //Teste do Fork 
     }
