@@ -15,10 +15,4 @@ public class Vacina {
 		this.vacina = vacina;
 	}
 	
-	public void setVacinadoTeste(boolean vacinado) {
-		this.vacinado = vacinado;
-	}
-	public boolean getVacinado() {
-		return this.vacinado;
-	}
 }
