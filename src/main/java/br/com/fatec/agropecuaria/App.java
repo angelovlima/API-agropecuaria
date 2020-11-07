@@ -4,75 +4,50 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.fatec.agropecuaria.model.animais.Bovino;
-import br.com.fatec.agropecuaria.services.CadastrarAnimal;
-import br.com.fatec.agropecuario.model.vacina.Carterinha;
-import br.com.fatec.agropecuario.model.vacina.Vacina;
 import br.com.fatec.agropecuaria.model.animais.Suino;
 import br.com.fatec.agropecuaria.services.BaseDados;
 import br.com.fatec.agropecuaria.services.Relatorios;
+import br.com.fatec.agropecuario.model.vacina.Carterinha;
+import br.com.fatec.agropecuario.model.vacina.Vacina;
 
-public class App 
-{
-    public static void main( String[] args )
-    {    ArrayList<Vacina> vacinas = new ArrayList<Vacina>();
-        Vacina v1 = new Vacina("Febre Aftosa");
-        vacinas.add(v1);
-        Vacina v2 = new Vacina("Brucelose");
-        vacinas.add(v2);
-        Vacina v3 = new Vacina("Clostridioses");
-        vacinas.add(v3);
-        Vacina v4 = new Vacina("Botulismo");
-        vacinas.add(v4);
-        Vacina v5 = new Vacina("Leptospirose");
-        vacinas.add(v5);
-        Vacina v6 = new Vacina("Raiva bovina");
-        vacinas.add(v6);
-        Vacina v7 = new Vacina("IBR, BVD");
-        vacinas.add(v7);
-              
-        Carterinha carterinhaBovino = new Carterinha("bovino",vacinas);
-        
-        CadastrarAnimal cadastrarAnimal = new CadastrarAnimal();
-        
-        Bovino bovino = cadastrarAnimal.cadastrarBovino(carterinhaBovino);
-        
-        System.out.println(bovino.getCarterinha().getTipo() + "\n"+
-        		bovino.getCarterinha().getCarterinha().get(0).getAgendamento());
-        
-        //Desde aqui usa-se o BaseDados
-        
-        BaseDados baseDados = new BaseDados();
-        
-        List<Bovino> bovinos = new ArrayList<Bovino>();
-        bovinos = baseDados.popularListaBois();
+public class App {
+	public static void main(String[] args) {
 
-        List<Suino> suinos = new ArrayList<Suino>();
-        suinos = baseDados.popularListaPorcos();
-        Relatorios relatorios = new Relatorios();
-        relatorios.quantidadeTotalAnimaisCadastrados(bovinos, suinos);
-        relatorios.pesoDoRebanhoQuiloArroba(bovinos, suinos);
-        relatorios.quantidadeFemeaMacho(bovinos, suinos);
-    }
+		BaseDados baseDados = new BaseDados();
+
+		ArrayList<Vacina> vacinasBoi = new ArrayList<Vacina>();
+		vacinasBoi = baseDados.popularListaVacinasBovino();
+		Carterinha carterinhaBovino = new Carterinha("bovino", vacinasBoi);
+
+		ArrayList<Vacina> vacinasPorco = new ArrayList<Vacina>();
+		vacinasPorco = baseDados.popularListaVacinasSuino();
+		Carterinha carterinhaSuino = new Carterinha("suino", vacinasPorco);
+
+//        CadastrarAnimal cadastrarAnimal = new CadastrarAnimal();
+//        
+//        Bovino bovino = cadastrarAnimal.cadastrarBovino(carterinhaBovino);
+//        
+//        System.out.println(bovino.getCarterinha().getTipo() + "\n"+
+//        		bovino.getCarterinha().getCarterinha().get(0).getAgendamento());
+//        
+		// Desde aqui usa-se o BaseDados
+
+		List<Bovino> bovinos = new ArrayList<Bovino>();
+		bovinos = baseDados.popularListaBois(carterinhaBovino);
+
+		List<Suino> suinos = new ArrayList<Suino>();
+		suinos = baseDados.popularListaPorcos(carterinhaSuino);
+//		for (Suino suino : suinos) {
+//			Carterinha carteirinha = suino.getCarterinha();
+//			ArrayList<Vacina> vacinas = new ArrayList<Vacina>();
+//			vacinas = carteirinha.getCarterinha();
+//			for (Vacina vacina : vacinas) {
+//				System.out.println(vacina.getVacina());
+//			}
+//		}
+		Relatorios relatorios = new Relatorios();
+		relatorios.quantidadeTotalAnimaisCadastrados(bovinos, suinos);
+		relatorios.pesoDoRebanhoQuiloArroba(bovinos, suinos);
+		relatorios.quantidadeFemeaMacho(bovinos, suinos);
+	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
