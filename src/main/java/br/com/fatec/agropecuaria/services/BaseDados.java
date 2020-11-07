@@ -6,35 +6,34 @@ import java.util.Random;
 
 import br.com.fatec.agropecuaria.model.animais.Bovino;
 import br.com.fatec.agropecuaria.model.animais.Suino;
-import br.com.fatec.agropecuario.model.vacina.Carterinha;
 import br.com.fatec.agropecuario.model.vacina.Vacina;
 
 public class BaseDados {
 
-	public List<Bovino> popularListaBois(Carterinha carterinhaBovino) {
+	public List<Bovino> popularListaBois() {
 		Random gerador = new Random();
 		List<Bovino> bovinos = new ArrayList<Bovino>();
-		for (int i = 1; i <= 10; i++) {
-			
-				for (Vacina vacina : carterinhaBovino.getCarterinha()) {
-					int numeroAleatorio = (gerador.nextInt(2)+1);
-					System.out.println(numeroAleatorio);
-					if(numeroAleatorio == 1) {
-						vacina.setVacinado(false);
-					} else {
-						vacina.setVacinado(false);
-						vacina.setAgendamento("20/20/2020");
-					}
-				}
-			
+		for (int i = 1; i <= 10; i++) {			
 		
 			Bovino boi = new Bovino(gerador.nextInt(100) +"00" + gerador.nextInt(100), 
 					(double) (gerador.nextInt(1000)/15), 
 					"boi"+i, 
 					(i % 2 == 0)?"M":"F", 
 					(gerador.nextInt(20)+10)+"/0"+(gerador.nextInt(8)+1)+"/"+(2000 + gerador.nextInt(20)), 
-					carterinhaBovino);
+					null);
 			bovinos.add(boi);
+			
+			boi.setVacinas(popularListaVacinasBovino());
+			for (Vacina vacina : boi.getVacinas()) {
+				int numeroAleatorio = (gerador.nextInt(2)+1);
+				System.out.println(numeroAleatorio);
+				if(numeroAleatorio == 1) {
+					vacina.setVacinado(false);
+				} else {
+					vacina.setVacinado(false);
+					vacina.setAgendamento("20/20/2020");
+				}
+			}
 		}
 		for (Bovino bovino : bovinos) {
 			System.out.println("--------------------------");
@@ -48,31 +47,28 @@ public class BaseDados {
 		return bovinos;
 	}
 	
-	public List<Suino> popularListaPorcosVacinados(Carterinha carterinhaSuino, List<Suino> suinos){
-		Random gerador = new Random();
-		
-		for (Vacina vacina : carterinhaSuino.getCarterinha()) {
-			vacina.setVacinado(true);
-		}
-		
-		
-		Suino porco = new Suino(gerador.nextInt(100) +"00" + gerador.nextInt(100), 
-				(double) (gerador.nextInt(500)/15), 
-				"porco", 
-				"M", 
-				(gerador.nextInt(20)+10)+"/0"+(gerador.nextInt(8)+1)+"/"+(2000 + gerador.nextInt(20)), 
-				carterinhaSuino);
-		suinos.add(porco);
-	
-		
-		return suinos;
-	}
-	
-	public List<Suino> popularListaPorcos(Carterinha carterinhaSuino) {
+	public List<Suino> popularListaPorcos() {
 		Random gerador = new Random();
 		List<Suino> suinos = new ArrayList<Suino>();
 		for (int i = 1; i <= 10; i++) {
-				for (Vacina vacina : carterinhaSuino.getCarterinha()) {
+			
+			Suino porco = new Suino(gerador.nextInt(100) +"00" + gerador.nextInt(100), 
+					(double) (gerador.nextInt(500)/15), 
+					"porco"+i, 
+					(i % 2 == 0)?"M":"F", 
+					(gerador.nextInt(20)+10)+"/0"+(gerador.nextInt(8)+1)+"/"+(2000 + gerador.nextInt(20)), 
+					null);
+			suinos.add(porco);
+			
+			if(i <= 2) {
+				porco.setVacinas(popularListaVacinasSuino());
+				for (Vacina vacina : porco.getVacinas()) {
+						vacina.setVacinado(true);
+						vacina.setAgendamento(null);
+				}
+			} else {
+				porco.setVacinas(popularListaVacinasSuino());
+				for (Vacina vacina : porco.getVacinas()) {
 					int numeroAleatorio = (gerador.nextInt(2)+1);
 					System.out.println(numeroAleatorio);
 					if(numeroAleatorio == 1) {
@@ -83,16 +79,8 @@ public class BaseDados {
 						vacina.setAgendamento("20/20/2020");
 					}
 				}
-			
-			
-			
-			Suino porco = new Suino(gerador.nextInt(100) +"00" + gerador.nextInt(100), 
-					(double) (gerador.nextInt(500)/15), 
-					"porco"+i, 
-					(i % 2 == 0)?"M":"F", 
-					(gerador.nextInt(20)+10)+"/0"+(gerador.nextInt(8)+1)+"/"+(2000 + gerador.nextInt(20)), 
-					carterinhaSuino);
-			suinos.add(porco);
+			}
+
 		}
 	
 		return suinos;
