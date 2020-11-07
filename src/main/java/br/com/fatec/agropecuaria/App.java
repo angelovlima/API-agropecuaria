@@ -12,7 +12,7 @@ public class App
     {       
         BaseDados baseDados = new BaseDados();
         List<Bovino> bovinos = new ArrayList<Bovino>();
-        baseDados.popularListaBois();
+        bovinos = baseDados.popularListaBois();
 //        ArrayList<Vacina> vacinas = new ArrayList<Vacina>();
 //        Vacina v1 = new Vacina("Febre Aftosa");
 //        vacinas.add(v1);

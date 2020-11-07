@@ -13,7 +13,7 @@ public class BaseDados {
 		List<Bovino> bovinos = new ArrayList<Bovino>();
 		for (int i = 1; i <= 10; i++) {
 			Bovino boi = new Bovino(gerador.nextInt(100) +"00" + gerador.nextInt(100), 
-					(double) gerador.nextInt(1000), 
+					(double) (gerador.nextInt(1000)/15), 
 					"boi"+i, 
 					(i % 2 == 0)?"M":"F", 
 					(gerador.nextInt(20)+10)+"/0"+(gerador.nextInt(8)+1)+"/"+(2000 + gerador.nextInt(20)), 
