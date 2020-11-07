@@ -1,18 +1,24 @@
 package br.com.fatec.agropecuaria.services;
 
+import java.util.List;
+
+import br.com.fatec.agropecuaria.model.animais.Bovino;
+import br.com.fatec.agropecuaria.model.animais.Suino;
+
 public class Relatorios {
 
-	public void quantidadeTotalAnimaisCadastrados() {
-		System.out.println("Quantidade total de animais cadastrados");
+	Calculador calculador = new Calculador();
+	public void quantidadeTotalAnimaisCadastrados(List<Bovino> bovinos, List<Suino> suinos) {
+		System.out.println("Quantidade total de animais cadastrados:" + calculador.calcularTotalAnimais(bovinos, suinos));
 	}
 	
 	public void precoDoRebanho() {
 		System.out.println("Preco total rebanho");
 	}
 	
-	public void pesoDoRebanhoQuiloArroba() {
-		System.out.println("Peso total quilo");
-		System.out.println("Peso total arroba");
+	public void pesoDoRebanhoQuiloArroba(List<Bovino> bovinos, List<Suino> suinos) {
+		System.out.println("Peso total quilo:" + calculador.calcularPesoQuilo(bovinos, suinos));
+		System.out.println("Peso total arroba:" + calculador.calcularPesoArroba(bovinos, suinos));
 	}
 	
 	public void quantidadeFemeaMacho() {

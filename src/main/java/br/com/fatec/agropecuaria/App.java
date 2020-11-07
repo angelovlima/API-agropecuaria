@@ -6,6 +6,7 @@ import java.util.List;
 import br.com.fatec.agropecuaria.model.animais.Bovino;
 import br.com.fatec.agropecuaria.model.animais.Suino;
 import br.com.fatec.agropecuaria.services.BaseDados;
+import br.com.fatec.agropecuaria.services.Relatorios;
 
 public class App 
 {
@@ -18,6 +19,10 @@ public class App
 
         List<Suino> suinos = new ArrayList<Suino>();
         suinos = baseDados.popularListaPorcos();
+        
+        Relatorios relatorios = new Relatorios();
+        relatorios.quantidadeTotalAnimaisCadastrados(bovinos, suinos);
+        relatorios.pesoDoRebanhoQuiloArroba(bovinos, suinos);
 
 //        ArrayList<Vacina> vacinas = new ArrayList<Vacina>();
 //        Vacina v1 = new Vacina("Febre Aftosa");
