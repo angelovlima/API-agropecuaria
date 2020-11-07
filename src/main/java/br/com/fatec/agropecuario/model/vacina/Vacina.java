@@ -11,11 +11,9 @@ public class Vacina {
 	private boolean vacinado;
 	private String agendamento;
 	
-	public Vacina(String vacina, boolean vacinado, String agendamento) {
+	public Vacina(String vacina) {
 		super();
 		this.vacina = vacina;
-		this.vacinado = vacinado;
-		this.agendamento = agendamento;
 	}
 	
 	

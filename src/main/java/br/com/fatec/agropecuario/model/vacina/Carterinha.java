@@ -10,5 +10,12 @@ import lombok.Setter;
 
 public class Carterinha {
 		private ArrayList<Vacina> carterinha;
+
+		public Carterinha(ArrayList<Vacina> carterinha) {
+			super();
+			this.carterinha = carterinha;
+		}
+		
+	
 		
 }
