@@ -32,4 +32,40 @@ public class Calculador {
 		}
 		return pesoTotal;
 	}
+	
+	public int calcularFemea(List<Bovino> bovinos, List<Suino> suinos) {
+		int femeaTotal = 0;
+		for (Suino suino : suinos) {
+			if(suino.getGenero() == "F") {
+				femeaTotal += 1;				
+			}
+			
+		}
+		
+		for (Bovino bovino : bovinos) {
+			if(bovino.getGenero() == "F") {
+				femeaTotal += 1;				
+			}
+			
+		}
+		return femeaTotal;
+	}
+	
+	public int calcularMacho(List<Bovino> bovinos, List<Suino> suinos) {
+		int machoTotal = 0;
+		for (Suino suino : suinos) {
+			if(suino.getGenero() == "M") {
+				machoTotal += 1;				
+			}
+			
+		}
+		
+		for (Bovino bovino : bovinos) {
+			if(bovino.getGenero() == "M") {
+				machoTotal += 1;				
+			}
+			
+		}
+		return machoTotal;
+	}
 }

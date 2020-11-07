@@ -21,9 +21,9 @@ public class Relatorios {
 		System.out.println("Peso total arroba:" + calculador.calcularPesoArroba(bovinos, suinos));
 	}
 	
-	public void quantidadeFemeaMacho() {
-		System.out.println("Quantidade Femeas");
-		System.out.println("Quantidade Machos");
+	public void quantidadeFemeaMacho(List<Bovino> bovinos, List<Suino> suinos) {
+		System.out.println("Quantidade Femeas:" +calculador.calcularFemea(bovinos, suinos));
+		System.out.println("Quantidade Machos:" + calculador.calcularMacho(bovinos, suinos));
 	}
 	
 	public void dadosVacina() {

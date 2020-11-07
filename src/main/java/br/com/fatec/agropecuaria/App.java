@@ -23,6 +23,7 @@ public class App
         Relatorios relatorios = new Relatorios();
         relatorios.quantidadeTotalAnimaisCadastrados(bovinos, suinos);
         relatorios.pesoDoRebanhoQuiloArroba(bovinos, suinos);
+        relatorios.quantidadeFemeaMacho(bovinos, suinos);
 
 //        ArrayList<Vacina> vacinas = new ArrayList<Vacina>();
 //        Vacina v1 = new Vacina("Febre Aftosa");
