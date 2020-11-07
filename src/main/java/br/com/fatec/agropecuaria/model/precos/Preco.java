@@ -7,10 +7,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class Preco {
+public abstract class Preco {
 
-	private Double precoQuilo;
+	private Double preco;
 	
-	private Double precoArroba;
+
 	
 }
