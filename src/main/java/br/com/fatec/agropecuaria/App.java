@@ -29,6 +29,17 @@ public class App
         vacinas.add(v6);
         Vacina v7 = new Vacina("IBR, BVD");
         vacinas.add(v7);
+              
+        Carterinha carterinhaBovino = new Carterinha("bovino",vacinas);
+        
+        CadastrarAnimal cadastrarAnimal = new CadastrarAnimal();
+        
+        Bovino bovino = cadastrarAnimal.cadastrarBovino(carterinhaBovino);
+        
+        System.out.println(bovino.getCarterinha().getTipo() + "\n"+
+        		bovino.getCarterinha().getCarterinha().get(0).getAgendamento());
+        
+        //Desde aqui usa-se o BaseDados
         
         BaseDados baseDados = new BaseDados();
         
@@ -41,17 +52,6 @@ public class App
         relatorios.quantidadeTotalAnimaisCadastrados(bovinos, suinos);
         relatorios.pesoDoRebanhoQuiloArroba(bovinos, suinos);
         relatorios.quantidadeFemeaMacho(bovinos, suinos);
-
-
-        
-        Carterinha carterinhaBovino = new Carterinha("bovino",vacinas);
-        
-        CadastrarAnimal cadastrarAnimal = new CadastrarAnimal();
-        
-        Bovino bovino = cadastrarAnimal.cadastrarBovino(carterinhaBovino);
-        
-        System.out.println(bovino.getDataNascimento() + "\n"+
-        		bovino.getGenero());
     }
 }
 
