@@ -5,7 +5,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-
 public class Vacina {
 	private String vacina;
 	private boolean vacinado;
@@ -16,5 +15,10 @@ public class Vacina {
 		this.vacina = vacina;
 	}
 	
-	
+	public void setVacinadoTeste(boolean vacinado) {
+		this.vacinado = vacinado;
+	}
+	public boolean getVacinado() {
+		return this.vacinado;
+	}
 }

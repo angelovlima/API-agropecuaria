@@ -37,14 +37,9 @@ public class App {
 
 		List<Suino> suinos = new ArrayList<Suino>();
 		suinos = baseDados.popularListaPorcos(carterinhaSuino);
-//		for (Suino suino : suinos) {
-//			Carterinha carteirinha = suino.getCarterinha();
-//			ArrayList<Vacina> vacinas = new ArrayList<Vacina>();
-//			vacinas = carteirinha.getCarterinha();
-//			for (Vacina vacina : vacinas) {
-//				System.out.println(vacina.getVacina());
-//			}
-//		}
+
+		
+		
 		Relatorios relatorios = new Relatorios();
 		relatorios.quantidadeTotalAnimaisCadastrados(bovinos, suinos);
 		relatorios.pesoDoRebanhoQuiloArroba(bovinos, suinos);

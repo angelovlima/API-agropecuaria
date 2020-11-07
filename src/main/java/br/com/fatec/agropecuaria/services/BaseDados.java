@@ -15,6 +15,25 @@ public class BaseDados {
 		Random gerador = new Random();
 		List<Bovino> bovinos = new ArrayList<Bovino>();
 		for (int i = 1; i <= 10; i++) {
+			
+			if(i <= 2) {
+				for (Vacina vacina : carterinhaBovino.getCarterinha()) {
+						vacina.setVacinado(true);
+				}
+			} else {
+				for (Vacina vacina : carterinhaBovino.getCarterinha()) {
+					int numeroAleatorio = (gerador.nextInt(2)+1);
+					System.out.println(numeroAleatorio);
+					if(numeroAleatorio == 1) {
+						vacina.setVacinado(true);
+					} else {
+						vacina.setVacinado(false);
+						//System.out.println((gerador.nextInt(20)+10)+"/0"+(gerador.nextInt(8)+1)+"/"+(2019 + gerador.nextInt(1)));
+						vacina.setAgendamento("20/20/2020");
+					}
+				}
+			}
+		
 			Bovino boi = new Bovino(gerador.nextInt(100) +"00" + gerador.nextInt(100), 
 					(double) (gerador.nextInt(1000)/15), 
 					"boi"+i, 
@@ -39,12 +58,30 @@ public class BaseDados {
 		Random gerador = new Random();
 		List<Suino> suinos = new ArrayList<Suino>();
 		for (int i = 1; i <= 7; i++) {
+			ArrayList<Vacina> vacinas = new ArrayList<Vacina>();
+			vacinas = carterinhaSuino.getCarterinha();
+			if(i <= 2) {
+				for (Vacina vacina : vacinas) {
+						vacina.setVacinadoTeste(true);
+				}
+				
+			} else {
+				for (Vacina vacina : vacinas) {
+					int numeroAleatorio = (gerador.nextInt(2)+1);
+					if(numeroAleatorio == 1) {
+						vacina.setVacinadoTeste(true);
+					} else {
+						vacina.setVacinadoTeste(false);
+					}
+				}
+			}
+			Carterinha vacinasCarteirinha = new Carterinha("suino", vacinas);
 			Suino porco = new Suino(gerador.nextInt(100) +"00" + gerador.nextInt(100), 
 					(double) (gerador.nextInt(500)/15), 
 					"porco"+i, 
 					(i % 2 == 0)?"M":"F", 
 					(gerador.nextInt(20)+10)+"/0"+(gerador.nextInt(8)+1)+"/"+(2000 + gerador.nextInt(20)), 
-					carterinhaSuino);
+					vacinasCarteirinha);
 			suinos.add(porco);
 		}
 		for (Suino suino : suinos) {
@@ -54,6 +91,11 @@ public class BaseDados {
 			System.out.println(suino.getRaca());
 			System.out.println(suino.getGenero());
 			System.out.println(suino.getDataNascimento());
+			for (Vacina vacina : suino.getCarterinha().getCarterinha()) {
+				System.out.println(vacina.getVacina());
+				System.out.println(vacina.getAgendamento());
+				System.out.println(vacina.getVacinado());
+			}
 			System.out.println("--------------------------");
 		}
 		return suinos;
