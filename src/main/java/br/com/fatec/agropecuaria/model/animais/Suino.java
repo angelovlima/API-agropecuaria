@@ -9,8 +9,8 @@ import lombok.Setter;
 @Setter
 public class Suino extends Animal{
 	
-	public Suino(Double id, String registroUnico, Double peso, String raca, String genero, String dataNascimento, Carterinha carterinha) {
-		super(id, registroUnico, peso, raca, genero, dataNascimento, carterinha);
+	public Suino(String registroUnico, Double peso, String raca, String genero, String dataNascimento, Carterinha carterinha) {
+		super(registroUnico, peso, raca, genero, dataNascimento, carterinha);
 		
 	}
 	

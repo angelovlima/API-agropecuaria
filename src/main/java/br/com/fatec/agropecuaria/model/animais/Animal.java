@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 @Data
 public abstract class Animal {
 
-	private Double id;
 	private String registroUnico;
 	private Double peso;
 	private String raca;
