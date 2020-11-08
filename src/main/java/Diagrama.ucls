@@ -70,27 +70,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="br.com.fatec.agropecuaria.model.vendas.VendaBovino" project="agropecuaria" 
-    file="/agropecuaria/src/main/java/br/com/fatec/agropecuaria/model/vendas/VendaBovino.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="315" y="993"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="9" language="java" name="br.com.fatec.agropecuaria.model.vendas.VendaSuino" project="agropecuaria" 
-    file="/agropecuaria/src/main/java/br/com/fatec/agropecuaria/model/vendas/VendaSuino.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="921" y="993"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="10" language="java" name="br.com.fatec.agropecuaria.model.precos.Preco" project="agropecuaria" 
+  <class id="8" language="java" name="br.com.fatec.agropecuaria.model.precos.Preco" project="agropecuaria" 
     file="/agropecuaria/src/main/java/br/com/fatec/agropecuaria/model/precos/Preco.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1168" y="638"/>    
@@ -100,7 +80,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="11" language="java" name="br.com.fatec.agropecuaria.model.precos.Arroba" project="agropecuaria" 
+  <class id="9" language="java" name="br.com.fatec.agropecuaria.model.precos.Arroba" project="agropecuaria" 
     file="/agropecuaria/src/main/java/br/com/fatec/agropecuaria/model/precos/Arroba.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1422" y="782"/>    
@@ -110,7 +90,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="12" language="java" name="br.com.fatec.agropecuaria.model.precos.Quilo" project="agropecuaria" 
+  <class id="10" language="java" name="br.com.fatec.agropecuaria.model.precos.Quilo" project="agropecuaria" 
     file="/agropecuaria/src/main/java/br/com/fatec/agropecuaria/model/precos/Quilo.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1170" y="844"/>    
@@ -120,7 +100,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="13" language="java" name="br.com.fatec.agropecuaria.model.animais.Animal" project="agropecuaria" 
+  <class id="11" language="java" name="br.com.fatec.agropecuaria.model.animais.Animal" project="agropecuaria" 
     file="/agropecuaria/src/main/java/br/com/fatec/agropecuaria/model/animais/Animal.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="634" y="322"/>    
@@ -130,7 +110,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="14" language="java" name="br.com.fatec.agropecuaria.model.animais.Bovino" project="agropecuaria" 
+  <class id="12" language="java" name="br.com.fatec.agropecuaria.model.animais.Bovino" project="agropecuaria" 
     file="/agropecuaria/src/main/java/br/com/fatec/agropecuaria/model/animais/Bovino.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="332" y="776"/>    
@@ -140,7 +120,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="15" language="java" name="br.com.fatec.agropecuaria.model.animais.Suino" project="agropecuaria" 
+  <class id="13" language="java" name="br.com.fatec.agropecuaria.model.animais.Suino" project="agropecuaria" 
     file="/agropecuaria/src/main/java/br/com/fatec/agropecuaria/model/animais/Suino.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="900" y="744"/>    
@@ -150,69 +130,57 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <association id="16">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="17" name="bovinos"/>      
-      <multiplicity id="18" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="14" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="19">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="7"/>  
+  <generalization id="14">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="8"/>  
   </generalization>  
-  <generalization id="20">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="10"/>  
-  </generalization>  
-  <generalization id="21">    
-    <end type="SOURCE" refId="15"/>    
-    <end type="TARGET" refId="13"/>  
-  </generalization>  
-  <association id="22">    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="23" name="baseDados"/>      
-      <multiplicity id="24" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="2" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="25">    
-    <end type="SOURCE" refId="13" navigable="false">      
-      <attribute id="26" name="vacinas"/>      
-      <multiplicity id="27" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="28">    
-    <end type="SOURCE" refId="14"/>    
-    <end type="TARGET" refId="13"/>  
-  </generalization>  
-  <association id="29">    
+  <association id="15">    
     <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="30" name="calculador"/>      
-      <multiplicity id="31" minimum="0" maximum="1"/>    
+      <attribute id="16" name="calculador">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="17" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="32">    
-    <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="33" name="suinos"/>      
-      <multiplicity id="34" minimum="0" maximum="2147483647"/>    
+  <association id="18">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="19" name="baseDados">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="20" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="15" navigable="true"/>    
+    <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="35">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="7"/>  
+  <association id="21">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="22" name="vacinas">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="23" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="24">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="11"/>  
   </generalization>  
-  <generalization id="36">    
+  <generalization id="25">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="8"/>  
+  </generalization>  
+  <generalization id="26">    
     <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="10"/>  
+    <end type="TARGET" refId="11"/>  
   </generalization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
