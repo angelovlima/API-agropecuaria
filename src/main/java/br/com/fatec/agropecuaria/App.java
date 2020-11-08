@@ -9,6 +9,7 @@ import br.com.fatec.agropecuaria.model.precos.Arroba;
 import br.com.fatec.agropecuaria.model.precos.Quilo;
 import br.com.fatec.agropecuaria.services.BaseDados;
 import br.com.fatec.agropecuaria.services.CadastrarAnimal;
+import br.com.fatec.agropecuaria.services.Menu;
 import br.com.fatec.agropecuario.model.vacina.Vacina;
 
 public class App {
@@ -26,21 +27,14 @@ public class App {
 		ArrayList<Vacina> vacinasPorco = new ArrayList<Vacina>();
 		vacinasPorco = baseDados.popularListaVacinasSuino();
 		
-//        CadastrarAnimal cadastrarAnimal = new CadastrarAnimal();
-//        
-//        Bovino bovino = cadastrarAnimal.cadastrarBovino(carterinhaBovino);
-//        
-//        System.out.println(bovino.getCarterinha().getTipo() + "\n"+
-//        		bovino.getCarterinha().getCarterinha().get(0).getAgendamento());
-//        
-		// Desde aqui usa-se o BaseDados
-
 		List<Bovino> bovinos = new ArrayList<Bovino>();
 		bovinos = baseDados.popularListaBois();
 
 		List<Suino> suinos = new ArrayList<Suino>();
 		suinos = baseDados.popularListaPorcos();
 		
+		Menu menu = new Menu();
+		menu.menu();
 		
 //		Relatorios relatorios = new Relatorios();
 //		relatorios.quantidadeTotalAnimaisCadastrados(bovinos, suinos);
