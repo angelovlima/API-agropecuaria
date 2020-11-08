@@ -5,9 +5,10 @@ import java.util.List;
 
 import br.com.fatec.agropecuaria.model.animais.Bovino;
 import br.com.fatec.agropecuaria.model.animais.Suino;
+import br.com.fatec.agropecuaria.model.precos.Arroba;
+import br.com.fatec.agropecuaria.model.precos.Quilo;
 import br.com.fatec.agropecuaria.services.BaseDados;
 import br.com.fatec.agropecuaria.services.CadastrarAnimal;
-import br.com.fatec.agropecuaria.services.Relatorios;
 import br.com.fatec.agropecuario.model.vacina.Vacina;
 
 public class App {
@@ -15,7 +16,10 @@ public class App {
 
 		BaseDados baseDados = new BaseDados();
 		CadastrarAnimal cadastrarAnimal = new CadastrarAnimal();
-
+		
+		Arroba precoArroba = baseDados.definirPrecoArroba();
+		Quilo precoQuilo = baseDados.definirPrecoQuilo();
+		
 		ArrayList<Vacina> vacinasBoi = new ArrayList<Vacina>();
 		vacinasBoi = baseDados.popularListaVacinasBovino();
 
@@ -38,25 +42,25 @@ public class App {
 		suinos = baseDados.popularListaPorcos();
 		
 		
-		Relatorios relatorios = new Relatorios();
-		relatorios.quantidadeTotalAnimaisCadastrados(bovinos, suinos);
-		relatorios.pesoDoRebanhoQuiloArroba(bovinos, suinos);
-		relatorios.quantidadeFemeaMacho(bovinos, suinos);
-		relatorios.dadosVacina(bovinos, suinos);
-		
-		suinos.add(cadastrarAnimal.cadastrarSuino());
-		for (Suino suino : suinos) {
-			System.out.println("--------------------------");
-			System.out.println(suino.getRegistroUnico());
-			System.out.println(suino.getPeso());
-			System.out.println(suino.getRaca());
-			System.out.println(suino.getGenero());
-			System.out.println(suino.getDataNascimento());
-			for (Vacina vacina : suino.getVacinas()) {
-				System.out.println(vacina.getAgendamento());
-				System.out.println(vacina.getVacina());
-				System.out.println(vacina.isVacinado());
-			}
-		}
+//		Relatorios relatorios = new Relatorios();
+//		relatorios.quantidadeTotalAnimaisCadastrados(bovinos, suinos);
+//		relatorios.pesoDoRebanhoQuiloArroba(bovinos, suinos);
+//		relatorios.quantidadeFemeaMacho(bovinos, suinos);
+//		relatorios.dadosVacina(bovinos, suinos);
+//		
+//		suinos.add(cadastrarAnimal.cadastrarSuino());
+//		for (Suino suino : suinos) {
+//			System.out.println("--------------------------");
+//			System.out.println(suino.getRegistroUnico());
+//			System.out.println(suino.getPeso());
+//			System.out.println(suino.getRaca());
+//			System.out.println(suino.getGenero());
+//			System.out.println(suino.getDataNascimento());
+//			for (Vacina vacina : suino.getVacinas()) {
+//				System.out.println(vacina.getAgendamento());
+//				System.out.println(vacina.getVacina());
+//				System.out.println(vacina.isVacinado());
+//			}
+//		}
 	}
 }
