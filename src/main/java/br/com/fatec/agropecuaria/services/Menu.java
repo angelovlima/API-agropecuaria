@@ -19,9 +19,13 @@ public class Menu {
 		
 		List<Bovino> bovinos = new ArrayList<Bovino>();
 		bovinos = baseDados.popularListaBois();
+		
+		List<Bovino> bovinosVendidos = new ArrayList<Bovino>();
 
 		List<Suino> suinos = new ArrayList<Suino>();
 		suinos = baseDados.popularListaPorcos();
+		
+		List<Suino> suinosVendidos = new ArrayList<Suino>();
 		
 		CadastrarAnimal cadastrarAnimal = new CadastrarAnimal();
 		Relatorios relatorios = new Relatorios();
