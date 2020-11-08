@@ -4,6 +4,8 @@ import java.util.List;
 
 import br.com.fatec.agropecuaria.model.animais.Bovino;
 import br.com.fatec.agropecuaria.model.animais.Suino;
+import br.com.fatec.agropecuaria.model.precos.Arroba;
+import br.com.fatec.agropecuaria.model.precos.Quilo;
 
 public class Calculador {
 
@@ -31,6 +33,32 @@ public class Calculador {
 			pesoTotal = pesoTotal + (bovino.getPeso()*15);
 		}
 		return pesoTotal;
+	}
+	
+	public double calcularPrecoArroba(List<Bovino> bovinos, List<Suino> suinos, Arroba preco) {
+		double precoTotal = 0;
+		
+		for (Suino suino : suinos) {
+			precoTotal = precoTotal + preco.getPreco() * suino.getPeso();
+		}
+		for (Bovino bovino : bovinos) {
+			precoTotal = precoTotal + preco.getPreco() * bovino.getPeso() ;
+		}
+		return precoTotal;
+	}
+	
+	public double calcularPrecoQuilo(List<Bovino> bovinos, List<Suino> suinos, Quilo preco) {
+		double precoTotal = 0;
+		
+		for (Suino suino : suinos) {
+			System.out.println(preco.getPreco()+ "<-preço do porco\n" 
+		+precoTotal );
+			precoTotal = precoTotal + preco.getPreco() * suino.getPeso();
+		}
+		for (Bovino bovino : bovinos) {
+			precoTotal = precoTotal + preco.getPreco() * bovino.getPeso() ;
+		}
+		return precoTotal * 15;
 	}
 	
 	public int calcularFemea(List<Bovino> bovinos, List<Suino> suinos) {
