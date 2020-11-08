@@ -6,6 +6,9 @@ import java.util.Random;
 
 import br.com.fatec.agropecuaria.model.animais.Bovino;
 import br.com.fatec.agropecuaria.model.animais.Suino;
+import br.com.fatec.agropecuaria.model.precos.Arroba;
+import br.com.fatec.agropecuaria.model.precos.Preco;
+import br.com.fatec.agropecuaria.model.precos.Quilo;
 import br.com.fatec.agropecuario.model.vacina.Vacina;
 
 public class BaseDados {
@@ -136,4 +139,13 @@ public class BaseDados {
 	
 	}
 	
+	public Quilo definirPrecoQuilo() {
+		Quilo precoQuilo = new Quilo(25.00);
+		return precoQuilo;
+	}
+	
+	public Arroba definirPrecoArroba() {
+		Arroba precoArroba = new Arroba(167.00);
+		return precoArroba;
+	}
 }
