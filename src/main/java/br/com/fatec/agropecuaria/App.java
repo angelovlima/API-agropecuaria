@@ -44,19 +44,16 @@ public class App {
 		relatorios.quantidadeFemeaMacho(bovinos, suinos);
 		relatorios.dadosVacina(bovinos, suinos);
 		
-		suinos.add(cadastrarAnimal.cadastrarSuino());
-		for (Suino suino : suinos) {
-			System.out.println("--------------------------");
-			System.out.println(suino.getRegistroUnico());
-			System.out.println(suino.getPeso());
-			System.out.println(suino.getRaca());
-			System.out.println(suino.getGenero());
-			System.out.println(suino.getDataNascimento());
-			for (Vacina vacina : suino.getVacinas()) {
-				System.out.println(vacina.getAgendamento());
-				System.out.println(vacina.getVacina());
-				System.out.println(vacina.isVacinado());
-			}
-		}
+		/*
+		 * suinos.add(cadastrarAnimal.cadastrarSuino()); for (Suino suino : suinos) {
+		 * System.out.println("--------------------------");
+		 * System.out.println(suino.getRegistroUnico());
+		 * System.out.println(suino.getPeso()); System.out.println(suino.getRaca());
+		 * System.out.println(suino.getGenero());
+		 * System.out.println(suino.getDataNascimento()); for (Vacina vacina :
+		 * suino.getVacinas()) { System.out.println(vacina.getAgendamento());
+		 * System.out.println(vacina.getVacina());
+		 * System.out.println(vacina.isVacinado()); } }
+		 */
 	}
 }
