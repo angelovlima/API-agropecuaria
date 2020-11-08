@@ -40,7 +40,7 @@ public class Menu {
 		
 		int menu = 100;
 		int menu2 = 100;
-		
+		int menu3 = 100;
 		while(menu != 0) {			
 			System.out.println("\n+++++++++++++++++++++++MENU+++++++++++++++++++++++ \n"
 					+ "0: Sair \n"
@@ -51,7 +51,8 @@ public class Menu {
 					+ "5: Checar preço total do Rebanho \n"
 					+ "6: Checar o peso total do Rebanho \n"
 					+ "7: Checar animais por Gênero \n"
-					+ "8: Checar a Porcentagem do rebanho Vacinado e quantos Faltam Vacinar \n");
+					+ "8: Checar a Porcentagem do rebanho Vacinado e quantos Faltam Vacinar \n"
+					+ "9: Vender Animal \n");
 			
 			menu = scInt.nextInt();
 			switch (menu) {
@@ -117,6 +118,32 @@ public class Menu {
 				
 			case 8:
 				relatorios.dadosVacina(bovinos, suinos);
+				break;
+			case 9:
+				while(menu3 != 0) {
+					System.out.println("\nESCOLHA UM TIPO DE ANIMAL\n"
+							+ "0: Sair \n"
+							+ "1: Bovino \n"
+							+ "2: Suino \n"
+							+ "3: Registro de Venda \n" );
+					
+					menu3 = scInt.nextInt();
+					String identificador;
+					
+					switch(menu3) {
+					case 1:
+						break;
+						
+					case 2:
+						break;
+						
+					case 3: 
+						break;
+						
+					default:
+						break;
+					}
+				}
 				
 			default:
 				break;
