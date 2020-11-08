@@ -68,4 +68,76 @@ public class Calculador {
 		}
 		return machoTotal;
 	}
+	
+	public double calcularPorcentagem(List<Bovino> bovinos, List<Suino> suinos) {
+		double porcentoTotal = 0;
+		int contVacina = 0;
+		int contAnimal = 0;
+		for(Suino suino: suinos) {
+			for (int i = 0; i < suino.getVacinas().size(); i++)
+				if(suino.getVacinas().get(i).isVacinado() == true) {
+					contVacina += 1;
+				}
+			if(contVacina == suino.getVacinas().size()) {
+				contAnimal += 1;
+				contVacina = 0;
+			}else {
+				contVacina = 0;
+			}
+				
+				
+		}
+		
+		for(Bovino bovino: bovinos) {
+			for (int i = 0; i < bovino.getVacinas().size(); i++)
+				if(bovino.getVacinas().get(i).isVacinado() == true) {
+					contVacina += 1;
+					
+				}
+			if(contVacina == bovino.getVacinas().size()) {
+				contAnimal += 1;
+				contVacina = 0;
+			}else {
+				contVacina = 0;
+			}
+		}
+		porcentoTotal = (contAnimal*100)/(bovinos.size()+suinos.size());
+		return porcentoTotal;
+	}
+	
+	public int faltamVacinar(List<Bovino> bovinos, List<Suino> suinos) {
+		int semVacinar = 0;
+		int contVacina = 0;
+		int contAnimal = 0;
+		for(Suino suino: suinos) {
+			for (int i = 0; i < suino.getVacinas().size(); i++)
+				if(suino.getVacinas().get(i).isVacinado() == true) {
+					contVacina += 1;
+				}
+			if(contVacina == suino.getVacinas().size()) {
+				contAnimal += 1;
+				contVacina = 0;
+			}else {
+				contVacina = 0;
+			}
+				
+				
+		}
+		
+		for(Bovino bovino: bovinos) {
+			for (int i = 0; i < bovino.getVacinas().size(); i++)
+				if(bovino.getVacinas().get(i).isVacinado() == true) {
+					contVacina += 1;
+					
+				}
+			if(contVacina == bovino.getVacinas().size()) {
+				contAnimal += 1;
+				contVacina = 0;
+			}else {
+				contVacina = 0;
+			}
+		}
+		semVacinar = (bovinos.size()+suinos.size()) - contAnimal;
+		return semVacinar;
+	}
 }

@@ -26,9 +26,9 @@ public class Relatorios {
 		System.out.println("Quantidade Machos:" + calculador.calcularMacho(bovinos, suinos));
 	}
 	
-	public void dadosVacina() {
-		System.out.println("Porcentagem do rebanho vacinada");
-		System.out.println("Quantos faltam vacinar");
+	public void dadosVacina(List<Bovino> bovinos, List<Suino> suinos) {
+		System.out.println("Porcentagem do rebanho vacinada: "+calculador.calcularPorcentagem(bovinos, suinos));
+		System.out.println("Quantos faltam vacinar: "+calculador.faltamVacinar(bovinos, suinos));
 	}
 	
 	

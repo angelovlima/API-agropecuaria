@@ -40,6 +40,7 @@ public class App {
 		relatorios.quantidadeTotalAnimaisCadastrados(bovinos, suinos);
 		relatorios.pesoDoRebanhoQuiloArroba(bovinos, suinos);
 		relatorios.quantidadeFemeaMacho(bovinos, suinos);
+		relatorios.dadosVacina(bovinos, suinos);
 		
 		for (Suino suino : suinos) {
 			System.out.println("--------------------------");
@@ -51,7 +52,7 @@ public class App {
 			for (Vacina vacina : suino.getVacinas()) {
 				System.out.println(vacina.getAgendamento());
 				System.out.println(vacina.getVacina());
-				System.out.println(vacina.getVacinado());
+				System.out.println(vacina.isVacinado());
 			}
 		}
 	}
