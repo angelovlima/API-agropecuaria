@@ -66,6 +66,8 @@ public class Menu {
 				break;
 				
 			case 3:
+				double totalPrecoArroba = 0;
+				double totalPrecoQuilo = 0;
 				while(menu2 != 0) {
 					System.out.println("\nESCOLHA UM TIPO DE ANIMAL\n"
 							+ "0: Sair \n"
@@ -80,21 +82,36 @@ public class Menu {
 						relatorios.registroUnicoBovino(bovinos);
 						System.out.println("Digite o identificador do bovino: ");
 						identificador = sc.nextLine();
-						System.out.println("Preço do Animal por Arroba: "+calcular.calcularPrecoBovinoArroba(identificador, bovinos, precoArroba));
-						System.out.println("Preço do Animal por Arroba: "+calcular.calcularPrecoBovinoQuilo(identificador, bovinos, precoQuilo));
+						
+						double bovinoArroba = calcular.calcularPrecoBovinoArroba(identificador, bovinos, precoArroba);
+						double bovinoQuilo = calcular.calcularPrecoBovinoQuilo(identificador, bovinos, precoQuilo);
+						totalPrecoArroba += bovinoArroba;
+						totalPrecoQuilo += bovinoQuilo;
+						
+						System.out.println("Preço do Animal por Arroba: "+bovinoArroba);
+						System.out.println("Preço do Animal por Quilo: "+ bovinoQuilo);
 						break;
 						
 					case 2:
 						relatorios.registroUnicoSuino(suinos);
 						System.out.println("Digite o identificador do suíno: ");
 						identificador = sc.nextLine();
-						System.out.println("Preço do Animal por Arroba: "+calcular.calcularPrecoSuinoArroba(identificador, suinos, precoArroba));
-						System.out.println("Preço do Animal por Quilo: "+calcular.calcularPrecoSuinoQuilo(identificador, suinos, precoQuilo));
+						
+						double suinoArroba =calcular.calcularPrecoSuinoArroba(identificador, suinos, precoArroba);
+						double suinoQuilo = calcular.calcularPrecoSuinoQuilo(identificador, suinos, precoQuilo);
+						totalPrecoArroba += suinoArroba;
+						totalPrecoQuilo += suinoQuilo;
+						
+						System.out.println("Preço do Animal por Arroba: "+ suinoArroba);
+						System.out.println("Preço do Animal por Quilo: "+ suinoQuilo);
 						break;
 						
 					default:
 						break;
 					}
+					
+					System.out.println("\nPreço total em Arroba:"+totalPrecoArroba);
+					System.out.println("Preço total em Quilo: "+totalPrecoQuilo);
 				}
 				
 				

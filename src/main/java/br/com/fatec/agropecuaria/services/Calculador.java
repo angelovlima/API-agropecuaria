@@ -171,11 +171,17 @@ public class Calculador {
 	
 	public double calcularPrecoSuinoArroba(String identificador, List<Suino> suinos, Arroba preco) {
 		double precoSuino = 0;
+		int check = 0;
 		for(Suino suino: suinos) {
 			if(suino.getRegistroUnico().equals(identificador)) {
 				precoSuino += suino.getPeso() * preco.getPreco();
+				check = 1;
 				
-			}	
+			}
+
+		}
+		if(check == 0) {
+			System.out.println("Este animal não existe nos registros");
 		}
 		
 		return precoSuino;
@@ -183,11 +189,16 @@ public class Calculador {
 	
 	public double calcularPrecoBovinoArroba(String identificador, List<Bovino> bovinos, Arroba preco) {
 		double precoBovino = 0;
+		int check = 0;
 		for(Bovino bovino: bovinos) {
 			if(bovino.getRegistroUnico().equals(identificador)) {
 				precoBovino += bovino.getPeso() * preco.getPreco();
-				
-			}	
+				check = 1;
+			}
+
+		}
+		if(check == 0) {
+			System.out.println("Este animal não existe nos registros");
 		}
 		
 		return precoBovino;
@@ -195,23 +206,26 @@ public class Calculador {
 	
 	public double calcularPrecoBovinoQuilo(String identificador, List<Bovino> bovinos, Quilo preco) {
 		double precoBovino = 0;
+		int check  = 0;
 		for(Bovino bovino: bovinos) {
 			if(bovino.getRegistroUnico().equals(identificador)) {
 				precoBovino += (bovino.getPeso() * 15) * preco.getPreco();
+				check = 1;
 				
-			}	
+			}
 		}
-		
 		return precoBovino;
 	}
 	
 	public double calcularPrecoSuinoQuilo(String identificador, List<Suino> suinos, Quilo preco) {
 		double precoSuino = 0;
+		int check = 0;
 		for(Suino suino: suinos) {
 			if(suino.getRegistroUnico().equals(identificador)) {
 				precoSuino += (suino.getPeso() * 15) * preco.getPreco();
-				
-			}	
+				check = 1;
+			}
+			
 		}
 	
 		return precoSuino;
