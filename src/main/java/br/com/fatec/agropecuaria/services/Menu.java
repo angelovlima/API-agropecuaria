@@ -142,6 +142,7 @@ public class Menu {
 				relatorios.dadosVacina(bovinos, suinos);
 				break;
 			case 9:
+				menu3 = 100;
 				while(menu3 != 0) {
 					System.out.println("\nESCOLHA UM TIPO DE ANIMAL\n"
 							+ "0: Sair \n"
