@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class Venda {
+public abstract class Venda {
 	private String dataVenda;
 	private Double valorTotal;
 

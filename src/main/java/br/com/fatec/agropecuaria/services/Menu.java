@@ -51,12 +51,7 @@ public class Menu {
 			
 			case 1:
 				Bovino bovino = cadastrarAnimal.cadastrarBovino();
-				System.out.println(bovino.getDataNascimento() + "<- data de nasimento \n" +
-						bovino.getGenero() + "<- genero \n");
 				bovinos.add(bovino);
-				
-				System.out.println(bovinos.size());
-				//bovinos.add(cadastrarAnimal.cadastrarBovino());
 				break;
 				
 			case 2:
