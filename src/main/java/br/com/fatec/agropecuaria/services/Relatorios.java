@@ -36,6 +36,16 @@ public class Relatorios {
 		System.out.println("Quantos faltam vacinar: "+calculador.faltamVacinar(bovinos, suinos));
 	}
 	
+	public void registroUnicoBovino(List<Bovino> bovinos) {
+		for (Bovino bovino: bovinos) {
+			System.out.println(bovino.getRegistroUnico());
+		}
+	}
 	
+	public void registroUnicoSuino(List<Suino> suinos) {
+		for (Suino suino: suinos) {
+			System.out.println(suino.getRegistroUnico());
+		}
+	}
 	
 }

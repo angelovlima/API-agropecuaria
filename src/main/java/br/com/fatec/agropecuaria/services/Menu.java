@@ -76,9 +76,7 @@ public class Menu {
 					
 					switch(menu2) {
 					case 1:
-						for (Bovino bovino: bovinos) {
-							System.out.println(bovino.getRegistroUnico());
-						}
+						relatorios.registroUnicoBovino(bovinos);
 						System.out.println("Digite o identificador do bovino: ");
 						identificador = sc.nextLine();
 						System.out.println("Preço do Animal por Arroba: "+calcular.calcularPrecoBovinoArroba(identificador, bovinos, precoArroba));
@@ -86,9 +84,7 @@ public class Menu {
 						break;
 						
 					case 2:
-						for (Suino suino: suinos) {
-							System.out.println(suino.getRegistroUnico());
-						}
+						relatorios.registroUnicoSuino(suinos);
 						System.out.println("Digite o identificador do suíno: ");
 						identificador = sc.nextLine();
 						System.out.println("Preço do Animal por Arroba: "+calcular.calcularPrecoSuinoArroba(identificador, suinos, precoArroba));
