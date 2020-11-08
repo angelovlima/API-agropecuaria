@@ -62,7 +62,12 @@ public class BaseDados {
 					(gerador.nextInt(20)+10)+"/0"+(gerador.nextInt(8)+1)+"/"+(2000 + gerador.nextInt(20)), 
 					null);
 			suinos.add(porco);
-			
+			if(i == 1) {
+				porco.setRegistroUnico("900");
+			}
+			if(i == 2) {
+				porco.setRegistroUnico("9000");
+			}
 			if(i <= 2) {
 				porco.setVacinas(popularListaVacinasSuino());
 				for (Vacina vacina : porco.getVacinas()) {

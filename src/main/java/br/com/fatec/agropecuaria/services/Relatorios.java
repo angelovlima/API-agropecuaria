@@ -6,6 +6,7 @@ import br.com.fatec.agropecuaria.model.animais.Bovino;
 import br.com.fatec.agropecuaria.model.animais.Suino;
 import br.com.fatec.agropecuaria.model.precos.Arroba;
 import br.com.fatec.agropecuaria.model.precos.Quilo;
+import br.com.fatec.agropecuaria.model.vendas.Venda;
 
 public class Relatorios {
 
@@ -46,6 +47,46 @@ public class Relatorios {
 		for (Suino suino: suinos) {
 			System.out.println(suino.getRegistroUnico());
 		}
+	}
+	
+	public void registroVendas(List<Venda> vendasBoi, List<Venda> vendasPorco, Arroba precoArroba) {
+		if(vendasPorco.size() != 0) {
+			System.out.println("//////////////////// REGISTRO DE VENDAS DE SUINOS ////////////////////\n\n");
+			for (Venda venda : vendasPorco) {
+				System.out.println("Data da venda: " + venda.getDataVenda());
+				System.out.println("Valor total da venda: " + venda.getValorTotal() + "\n");
+				System.out.println("Total de animais vendidos: " + vendasPorco.size() + "\n");
+				System.out.println("### Lista de Animais Vendidos ###\n");
+				for (Suino suino : venda.getSuinos()) {
+					System.out.println("////////////////////////////////////////\n");
+					System.out.println("Registro único: " + suino.getRegistroUnico() + "\n");
+					System.out.println("Peso do animal: " + suino.getPeso() + "\n");
+					System.out.println("Preço do animal: " + suino.getPeso() * precoArroba.getPreco() + "\n");
+					System.out.println("Raça do animal: " + suino.getRaca() + "\n");
+					System.out.println("Gênero do animal: " + (suino.getGenero().equals("f") || suino.getGenero().equals("F")? "Feminino": "Masculino") + "\n");
+					System.out.println("////////////////////////////////////////\n");
+				}
+			}
+		}
+		if(vendasBoi.size() != 0) {
+			System.out.println("//////////////////// REGISTRO DE VENDAS DE BOVINOS ////////////////////\n\n");
+			for (Venda venda : vendasBoi) {
+				System.out.println("Data da venda: " + venda.getDataVenda());
+				System.out.println("Valor total da venda: " + venda.getValorTotal() + "\n");
+				System.out.println("Total de animais vendidos: " + vendasBoi.size() + "\n");
+				System.out.println("### Lista de Animais Vendidos ###\n");
+				for (Bovino bovino : venda.getBovinos()) {
+					System.out.println("////////////////////////////////////////\n");
+					System.out.println("Registro único: " + bovino.getRegistroUnico() + "\n");
+					System.out.println("Peso do animal: " + bovino.getPeso() + "\n");
+					System.out.println("Preço do animal: " + bovino.getPeso() * precoArroba.getPreco() + "\n");
+					System.out.println("Raça do animal: " + bovino.getRaca() + "\n");
+					System.out.println("Gênero do animal: " + (bovino.getGenero().equals("f") || bovino.getGenero().equals("F")? "Feminino": "Masculino") + "\n");
+					System.out.println("////////////////////////////////////////\n");
+				}
+			}
+		}
+
 	}
 	
 }
