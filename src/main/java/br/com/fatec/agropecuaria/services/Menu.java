@@ -6,66 +6,69 @@ import java.util.Scanner;
 
 import br.com.fatec.agropecuaria.model.animais.Bovino;
 import br.com.fatec.agropecuaria.model.animais.Suino;
-import br.com.fatec.agropecuario.model.vacina.Vacina;
 
 public class Menu {
 	
 	public void menu(){
 		
 		Scanner scInt = new Scanner(System.in);
-		System.out.println("+++++++++++++++++++++++MENU+++++++++++++++++++++++"
-				+ "1: Cadastrar Bovino"
-				+ "2: Cadastrar Suino"
-				+ "3: Checar preço de algum Animal"
-				+ "4: Checar o preço total de Animais"
-				+ "5: Checar a quantidade de Animais Cadastrados"
-				+ "6: Checar preço total do Rebanho"//e a quantidade do rebanho tbm
-				+ "7: Checar o peso total do Rebanho"//aqui tbm precisa da quantidade do rebanho
-				+ "8: Checar animais por Gênero"
-				+ "9: Checar a Porcentagem do rebanho Vacinado e quantos Faltam Vacinar");
-		int menu = scInt.nextInt();
+		
+		
 		
 		BaseDados baseDados = new BaseDados();
-
-		ArrayList<Vacina> vacinasBoi = new ArrayList<Vacina>();
-		vacinasBoi = baseDados.popularListaVacinasBovino();
-
-		ArrayList<Vacina> vacinasPorco = new ArrayList<Vacina>();
-		vacinasPorco = baseDados.popularListaVacinasSuino();
 		
 		List<Bovino> bovinos = new ArrayList<Bovino>();
 		bovinos = baseDados.popularListaBois();
 
 		List<Suino> suinos = new ArrayList<Suino>();
 		suinos = baseDados.popularListaPorcos();
+		
 		CadastrarAnimal cadastrarAnimal = new CadastrarAnimal();
 		Relatorios relatorios = new Relatorios();
-		switch (menu) {
 		
+		int menu = 10;
+		
+		while(menu != 0) {
+			System.out.println("+++++++++++++++++++++++MENU+++++++++++++++++++++++ \n"
+					+ "1: Cadastrar Bovino \n"
+					+ "2: Cadastrar Suino \n"
+					+ "3: Checar preço de algum Animal \n"
+					+ "4: Checar o preço total de Animais \n"
+					+ "5: Checar a quantidade de Animais Cadastrados \n"
+					+ "6: Checar preço total do Rebanho \n"//e a quantidade do rebanho tbm
+					+ "7: Checar o peso total do Rebanho \n"//aqui tbm precisa da quantidade do rebanho
+					+ "8: Checar animais por Gênero \n"
+					+ "9: Checar a Porcentagem do rebanho Vacinado e quantos Faltam Vacinar \n");
+			
+			menu = scInt.nextInt();
+			switch (menu) {
+			
+			
+			case 1:
+				bovinos.add(cadastrarAnimal.cadastrarBovino());
+				break;
 				
-		case 1:
-			cadastrarAnimal.cadastrarBovino(null);
-			break;
-			
-		case 2:
-			cadastrarAnimal.cadastrarSuino(null);
-			break;
+			case 2:
+				suinos.add(cadastrarAnimal.cadastrarSuino());
+				break;
 
-		case 5:
-			relatorios.quantidadeTotalAnimaisCadastrados(bovinos, suinos);
-			break;
-			
-		case 7:
-			relatorios.pesoDoRebanhoQuiloArroba(bovinos, suinos);
-			break;
-			
-		case 8:
-			relatorios.quantidadeFemeaMacho(bovinos, suinos);
-			break;
-			
-		default:
-			break;
+			case 5:
+				relatorios.quantidadeTotalAnimaisCadastrados(bovinos, suinos);
+				break;
+				
+			case 7:
+				relatorios.pesoDoRebanhoQuiloArroba(bovinos, suinos);
+				break;
+				
+			case 8:
+				relatorios.quantidadeFemeaMacho(bovinos, suinos);
+				break;
+				
+			default:
+				break;
+			}
 		}
+		
 	}
 
 }
