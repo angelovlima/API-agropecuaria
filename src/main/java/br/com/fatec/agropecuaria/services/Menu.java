@@ -8,6 +8,8 @@ import br.com.fatec.agropecuaria.model.animais.Bovino;
 import br.com.fatec.agropecuaria.model.animais.Suino;
 import br.com.fatec.agropecuaria.model.precos.Arroba;
 import br.com.fatec.agropecuaria.model.precos.Quilo;
+import br.com.fatec.agropecuaria.model.vendas.VendaBovino;
+import br.com.fatec.agropecuaria.model.vendas.VendaSuino;
 
 public class Menu {
 	
@@ -37,6 +39,9 @@ public class Menu {
 		Relatorios relatorios = new Relatorios();
 		
 		Calculador calcular = new Calculador();
+		
+		List<VendaBovino> vendaBovino = new ArrayList<VendaBovino>();
+		List<VendaSuino> vendaSuino = new ArrayList<VendaSuino>();
 		
 		int menu = 100;
 		int menu2 = 100;
