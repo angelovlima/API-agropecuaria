@@ -66,7 +66,7 @@ public class Menu {
 				
 			case 3:
 				while(menu2 != 0) {
-					System.out.println("\nESCOLHA QUAL ANIMAL QUER COMPRAR\n"
+					System.out.println("\nESCOLHA UM TIPO DE ANIMAL\n"
 							+ "0: Sair \n"
 							+ "1: Bovino \n"
 							+ "2: Suino \n");
