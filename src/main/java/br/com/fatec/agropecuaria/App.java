@@ -51,7 +51,7 @@ public class App {
 			for (Vacina vacina : suino.getVacinas()) {
 				System.out.println(vacina.getAgendamento());
 				System.out.println(vacina.getVacina());
-				System.out.println(vacina.getVacinado());
+				System.out.println(vacina.isVacinado());
 			}
 		}
 	}
