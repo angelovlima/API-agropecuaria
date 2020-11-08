@@ -6,6 +6,7 @@ import java.util.List;
 import br.com.fatec.agropecuaria.model.animais.Bovino;
 import br.com.fatec.agropecuaria.model.animais.Suino;
 import br.com.fatec.agropecuaria.services.BaseDados;
+import br.com.fatec.agropecuaria.services.CadastrarAnimal;
 import br.com.fatec.agropecuaria.services.Relatorios;
 import br.com.fatec.agropecuario.model.vacina.Vacina;
 
@@ -13,6 +14,7 @@ public class App {
 	public static void main(String[] args) {
 
 		BaseDados baseDados = new BaseDados();
+		CadastrarAnimal cadastrarAnimal = new CadastrarAnimal();
 
 		ArrayList<Vacina> vacinasBoi = new ArrayList<Vacina>();
 		vacinasBoi = baseDados.popularListaVacinasBovino();
@@ -42,6 +44,7 @@ public class App {
 		relatorios.quantidadeFemeaMacho(bovinos, suinos);
 		relatorios.dadosVacina(bovinos, suinos);
 		
+		suinos.add(cadastrarAnimal.cadastrarSuino());
 		for (Suino suino : suinos) {
 			System.out.println("--------------------------");
 			System.out.println(suino.getRegistroUnico());
