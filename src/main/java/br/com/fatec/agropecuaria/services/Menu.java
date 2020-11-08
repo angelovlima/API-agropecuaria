@@ -152,7 +152,7 @@ public class Menu {
 						Venda venda = new Venda(dataVenda);
 						List<Suino> suinosVenda = new ArrayList<Suino>();
 						///////////////////////// FUTURA FUNCAO////////////////////////
-						menu4 = 1;
+						menu4 = 100;
 						while (menu4 != 0) {
 							int check = 0;
 							Suino suinoRemovido = null;
@@ -165,6 +165,9 @@ public class Menu {
 									valorTotalVenda = (valorTotalVenda + (suino.getPeso() * precoArroba.getPreco()));
 									System.out.println(suino.getRegistroUnico());
 									check = 1;
+									venda.setValorTotal(valorTotalVenda);
+									venda.setSuinos(suinosVenda);
+									vendasPorco.add(venda);
 								}
 							}
 							System.out.println(check);
@@ -181,9 +184,7 @@ public class Menu {
 							}
 							/////////////////////////////////////////////////////////////
 						}
-						venda.setValorTotal(valorTotalVenda);
-						venda.setSuinos(suinosVenda);
-						vendasPorco.add(venda);
+					
 						break;
 
 					case 3:
