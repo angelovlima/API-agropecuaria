@@ -168,4 +168,54 @@ public class Calculador {
 		semVacinar = (bovinos.size()+suinos.size()) - contAnimal;
 		return semVacinar;
 	}
+	
+	public double calcularPrecoSuinoArroba(String identificador, List<Suino> suinos, Arroba preco) {
+		double precoSuino = 0;
+		for(Suino suino: suinos) {
+			if(suino.getRegistroUnico().equals(identificador)) {
+				precoSuino += suino.getPeso() * preco.getPreco();
+				
+			}	
+		}
+		
+		return precoSuino;
+	}
+	
+	public double calcularPrecoBovinoArroba(String identificador, List<Bovino> bovinos, Arroba preco) {
+		double precoBovino = 0;
+		for(Bovino bovino: bovinos) {
+			if(bovino.getRegistroUnico().equals(identificador)) {
+				precoBovino += bovino.getPeso() * preco.getPreco();
+				
+			}	
+		}
+		
+		return precoBovino;
+	}
+	
+	public double calcularPrecoBovinoQuilo(String identificador, List<Bovino> bovinos, Quilo preco) {
+		double precoBovino = 0;
+		for(Bovino bovino: bovinos) {
+			if(bovino.getRegistroUnico().equals(identificador)) {
+				precoBovino += (bovino.getPeso() * 15) * preco.getPreco();
+				
+			}	
+		}
+		
+		return precoBovino;
+	}
+	
+	public double calcularPrecoSuinoQuilo(String identificador, List<Suino> suinos, Quilo preco) {
+		double precoSuino = 0;
+		for(Suino suino: suinos) {
+			if(suino.getRegistroUnico().equals(identificador)) {
+				precoSuino += (suino.getPeso() * 15) * preco.getPreco();
+				
+			}	
+		}
+	
+		return precoSuino;
+	}
+	
+	
 }

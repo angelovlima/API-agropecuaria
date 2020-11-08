@@ -36,6 +36,8 @@ public class Menu {
 		CadastrarAnimal cadastrarAnimal = new CadastrarAnimal();
 		Relatorios relatorios = new Relatorios();
 		
+		Calculador calcular = new Calculador();
+		
 		int menu = 100;
 		int menu2 = 100;
 		
@@ -74,13 +76,23 @@ public class Menu {
 					
 					switch(menu2) {
 					case 1:
+						for (Bovino bovino: bovinos) {
+							System.out.println(bovino.getRegistroUnico());
+						}
 						System.out.println("Digite o identificador do bovino: ");
 						identificador = sc.nextLine();
+						System.out.println("Preço do Animal por Arroba: "+calcular.calcularPrecoBovinoArroba(identificador, bovinos, precoArroba));
+						System.out.println("Preço do Animal por Arroba: "+calcular.calcularPrecoBovinoQuilo(identificador, bovinos, precoQuilo));
 						break;
 						
 					case 2:
+						for (Suino suino: suinos) {
+							System.out.println(suino.getRegistroUnico());
+						}
 						System.out.println("Digite o identificador do suíno: ");
 						identificador = sc.nextLine();
+						System.out.println("Preço do Animal por Arroba: "+calcular.calcularPrecoSuinoArroba(identificador, suinos, precoArroba));
+						System.out.println("Preço do Animal por Quilo: "+calcular.calcularPrecoSuinoQuilo(identificador, suinos, precoQuilo));
 						break;
 						
 					default:

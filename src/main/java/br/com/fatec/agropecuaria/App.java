@@ -1,16 +1,6 @@
 package br.com.fatec.agropecuaria;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import br.com.fatec.agropecuaria.model.animais.Bovino;
-import br.com.fatec.agropecuaria.model.animais.Suino;
-import br.com.fatec.agropecuaria.model.precos.Arroba;
-import br.com.fatec.agropecuaria.model.precos.Quilo;
-import br.com.fatec.agropecuaria.services.BaseDados;
-import br.com.fatec.agropecuaria.services.CadastrarAnimal;
 import br.com.fatec.agropecuaria.services.Menu;
-import br.com.fatec.agropecuario.model.vacina.Vacina;
 
 public class App {
 	public static void main(String[] args) {
