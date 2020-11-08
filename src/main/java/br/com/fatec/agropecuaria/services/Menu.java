@@ -13,6 +13,7 @@ public class Menu {
 	
 	public void menu(){
 		
+		Scanner sc = new Scanner(System.in);
 		Scanner scInt = new Scanner(System.in);
 		
 		
@@ -35,10 +36,12 @@ public class Menu {
 		CadastrarAnimal cadastrarAnimal = new CadastrarAnimal();
 		Relatorios relatorios = new Relatorios();
 		
-		int menu = 10;
+		int menu = 100;
+		int menu2 = 100;
 		
 		while(menu != 0) {			
 			System.out.println("\n+++++++++++++++++++++++MENU+++++++++++++++++++++++ \n"
+					+ "0: Sair \n"
 					+ "1: Cadastrar Bovino \n"
 					+ "2: Cadastrar Suino \n"
 					+ "3: Checar preço de algum Animal \n"
@@ -57,6 +60,35 @@ public class Menu {
 				
 			case 2:
 				suinos.add(cadastrarAnimal.cadastrarSuino());
+				break;
+				
+			case 3:
+				while(menu2 != 0) {
+					System.out.println("\nESCOLHA QUAL ANIMAL QUER COMPRAR\n"
+							+ "0: Sair \n"
+							+ "1: Bovino \n"
+							+ "2: Suino \n");
+					
+					menu2 = scInt.nextInt();
+					String identificador;
+					
+					switch(menu2) {
+					case 1:
+						System.out.println("Digite o identificador do bovino: ");
+						identificador = sc.nextLine();
+						break;
+						
+					case 2:
+						System.out.println("Digite o identificador do suíno: ");
+						identificador = sc.nextLine();
+						break;
+						
+					default:
+						break;
+					}
+				}
+				
+				
 				break;
 
 			case 4:
