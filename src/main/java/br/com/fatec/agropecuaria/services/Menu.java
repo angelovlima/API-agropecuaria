@@ -29,7 +29,9 @@ public class Menu {
 		int menu = 10;
 		
 		while(menu != 0) {
-			System.out.println("+++++++++++++++++++++++MENU+++++++++++++++++++++++ \n"
+			System.out.println(bovinos.size());
+			
+			System.out.println("\n+++++++++++++++++++++++MENU+++++++++++++++++++++++ \n"
 					+ "1: Cadastrar Bovino \n"
 					+ "2: Cadastrar Suino \n"
 					+ "3: Checar preço de algum Animal \n"
@@ -43,9 +45,14 @@ public class Menu {
 			menu = scInt.nextInt();
 			switch (menu) {
 			
-			
 			case 1:
-				bovinos.add(cadastrarAnimal.cadastrarBovino());
+				Bovino bovino = cadastrarAnimal.cadastrarBovino();
+				System.out.println(bovino.getDataNascimento() + "<- data de nasimento \n" +
+						bovino.getGenero() + "<- genero \n");
+				bovinos.add(bovino);
+				
+				System.out.println(bovinos.size());
+				//bovinos.add(cadastrarAnimal.cadastrarBovino());
 				break;
 				
 			case 2:
@@ -67,6 +74,7 @@ public class Menu {
 			default:
 				break;
 			}
+			
 		}
 		
 	}

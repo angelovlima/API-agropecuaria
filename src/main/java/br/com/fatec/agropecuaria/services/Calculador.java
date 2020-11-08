@@ -36,14 +36,14 @@ public class Calculador {
 	public int calcularFemea(List<Bovino> bovinos, List<Suino> suinos) {
 		int femeaTotal = 0;
 		for (Suino suino : suinos) {
-			if(suino.getGenero() == "F") {
+			if(suino.getGenero().equals("F") || suino.getGenero().equals("f")) {
 				femeaTotal += 1;				
 			}
 			
 		}
 		
 		for (Bovino bovino : bovinos) {
-			if(bovino.getGenero() == "F") {
+			if(bovino.getGenero().equals("F") || bovino.getGenero().equals("f")) {
 				femeaTotal += 1;				
 			}
 			
@@ -54,14 +54,14 @@ public class Calculador {
 	public int calcularMacho(List<Bovino> bovinos, List<Suino> suinos) {
 		int machoTotal = 0;
 		for (Suino suino : suinos) {
-			if(suino.getGenero() == "M") {
+			if(suino.getGenero().equals("M") || suino.getGenero().equals("m")) {
 				machoTotal += 1;				
 			}
 			
 		}
 		
 		for (Bovino bovino : bovinos) {
-			if(bovino.getGenero() == "M") {
+			if(bovino.getGenero().equals("M")|| bovino.getGenero().equals("m")) {
 				machoTotal += 1;				
 			}
 			

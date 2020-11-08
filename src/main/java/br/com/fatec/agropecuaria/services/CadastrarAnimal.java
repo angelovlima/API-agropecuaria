@@ -30,8 +30,8 @@ public class CadastrarAnimal {
 			}
 		}
 
-		sc.close();
-		scInt.close();
+		//sc.close();
+		//scInt.close();
 
 		return vacinas;
 
@@ -58,8 +58,8 @@ public class CadastrarAnimal {
 		vacinas = cadastrarVacina(bovino.getVacinas());
 		bovino.setVacinas(vacinas);
 		
-		sc.close();
-		scInt.close();
+		//sc.close();
+		//scInt.close();
 		return bovino;
 	}
 
@@ -85,8 +85,8 @@ public class CadastrarAnimal {
 		vacinas = cadastrarVacina(suino.getVacinas());
 		suino.setVacinas(vacinas);
 		
-		sc.close();
-		scInt.close();
+		//sc.close();
+		//scInt.close();
 		return suino;
 	}
 
