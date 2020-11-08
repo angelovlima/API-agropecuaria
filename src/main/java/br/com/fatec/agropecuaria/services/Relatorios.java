@@ -4,6 +4,8 @@ import java.util.List;
 
 import br.com.fatec.agropecuaria.model.animais.Bovino;
 import br.com.fatec.agropecuaria.model.animais.Suino;
+import br.com.fatec.agropecuaria.model.precos.Arroba;
+import br.com.fatec.agropecuaria.model.precos.Quilo;
 
 public class Relatorios {
 
@@ -12,8 +14,11 @@ public class Relatorios {
 		System.out.println("Quantidade total de animais cadastrados:" + calculador.calcularTotalAnimais(bovinos, suinos));
 	}
 	
-	public void precoDoRebanho() {
-		System.out.println("Preco total rebanho");
+	public void precoDoRebanho(List<Bovino> bovinos, List<Suino> suinos, Arroba precoArroba, Quilo precoQuilo) {
+		System.out.println("Preço total do rebanho em quilo: " +
+				calculador.calcularPrecoQuilo( bovinos, suinos, precoQuilo));
+		System.out.println("Preço total do rebanho em arroba: " + 
+				calculador.calcularPrecoArroba(bovinos, suinos, precoArroba));
 	}
 	
 	public void pesoDoRebanhoQuiloArroba(List<Bovino> bovinos, List<Suino> suinos) {
@@ -27,9 +32,10 @@ public class Relatorios {
 	}
 	
 	public void dadosVacina(List<Bovino> bovinos, List<Suino> suinos) {
-		System.out.println("Porcentagem do rebanho vacinada: "+calculador.calcularPorcentagem(bovinos, suinos));
+		System.out.println("Porcentagem do rebanho vacinada: "+calculador.calcularPorcentagem(bovinos, suinos)+"%");
 		System.out.println("Quantos faltam vacinar: "+calculador.faltamVacinar(bovinos, suinos));
 	}
+	
 	
 	
 }

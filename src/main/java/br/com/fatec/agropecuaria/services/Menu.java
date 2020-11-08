@@ -6,6 +6,8 @@ import java.util.Scanner;
 
 import br.com.fatec.agropecuaria.model.animais.Bovino;
 import br.com.fatec.agropecuaria.model.animais.Suino;
+import br.com.fatec.agropecuaria.model.precos.Arroba;
+import br.com.fatec.agropecuaria.model.precos.Quilo;
 
 public class Menu {
 	
@@ -16,6 +18,9 @@ public class Menu {
 		
 		
 		BaseDados baseDados = new BaseDados();
+		
+		Arroba precoArroba = baseDados.definirPrecoArroba();
+		Quilo precoQuilo = baseDados.definirPrecoQuilo();
 		
 		List<Bovino> bovinos = new ArrayList<Bovino>();
 		bovinos = baseDados.popularListaBois();
@@ -32,43 +37,46 @@ public class Menu {
 		
 		int menu = 10;
 		
-		while(menu != 0) {
-			System.out.println(bovinos.size());
-			
+		while(menu != 0) {			
 			System.out.println("\n+++++++++++++++++++++++MENU+++++++++++++++++++++++ \n"
 					+ "1: Cadastrar Bovino \n"
 					+ "2: Cadastrar Suino \n"
 					+ "3: Checar preço de algum Animal \n"
-					+ "4: Checar o preço total de Animais \n"
-					+ "5: Checar a quantidade de Animais Cadastrados \n"
-					+ "6: Checar preço total do Rebanho \n"//e a quantidade do rebanho tbm
-					+ "7: Checar o peso total do Rebanho \n"//aqui tbm precisa da quantidade do rebanho
-					+ "8: Checar animais por Gênero \n"
-					+ "9: Checar a Porcentagem do rebanho Vacinado e quantos Faltam Vacinar \n");
+					+ "4: Checar a quantidade de Animais Cadastrados \n"
+					+ "5: Checar preço total do Rebanho \n"
+					+ "6: Checar o peso total do Rebanho \n"
+					+ "7: Checar animais por Gênero \n"
+					+ "8: Checar a Porcentagem do rebanho Vacinado e quantos Faltam Vacinar \n");
 			
 			menu = scInt.nextInt();
 			switch (menu) {
 			
 			case 1:
-				Bovino bovino = cadastrarAnimal.cadastrarBovino();
-				bovinos.add(bovino);
+				bovinos.add(cadastrarAnimal.cadastrarBovino());
 				break;
 				
 			case 2:
 				suinos.add(cadastrarAnimal.cadastrarSuino());
 				break;
 
-			case 5:
+			case 4:
 				relatorios.quantidadeTotalAnimaisCadastrados(bovinos, suinos);
 				break;
 				
-			case 7:
+			case 5:
+				relatorios.precoDoRebanho(bovinos, suinos, precoArroba, precoQuilo);
+				break;
+				
+			case 6:
 				relatorios.pesoDoRebanhoQuiloArroba(bovinos, suinos);
 				break;
 				
-			case 8:
+			case 7:
 				relatorios.quantidadeFemeaMacho(bovinos, suinos);
 				break;
+				
+			case 8:
+				relatorios.dadosVacina(bovinos, suinos);
 				
 			default:
 				break;

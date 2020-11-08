@@ -15,7 +15,7 @@ import br.com.fatec.agropecuario.model.vacina.Vacina;
 public class App {
 	public static void main(String[] args) {
 
-		BaseDados baseDados = new BaseDados();
+		/*BaseDados baseDados = new BaseDados();
 		CadastrarAnimal cadastrarAnimal = new CadastrarAnimal();
 		
 		Arroba precoArroba = baseDados.definirPrecoArroba();
@@ -31,7 +31,7 @@ public class App {
 		bovinos = baseDados.popularListaBois();
 
 		List<Suino> suinos = new ArrayList<Suino>();
-		suinos = baseDados.popularListaPorcos();
+		suinos = baseDados.popularListaPorcos();*/
 		
 		Menu menu = new Menu();
 		menu.menu();
