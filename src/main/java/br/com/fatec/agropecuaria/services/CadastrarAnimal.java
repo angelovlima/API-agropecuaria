@@ -1,21 +1,20 @@
 package br.com.fatec.agropecuaria.services;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import br.com.fatec.agropecuaria.model.animais.Bovino;
 import br.com.fatec.agropecuaria.model.animais.Suino;
-import br.com.fatec.agropecuario.model.vacina.Carterinha;
 import br.com.fatec.agropecuario.model.vacina.Vacina;
 
 public class CadastrarAnimal {
+	
+	BaseDados baseDados = new BaseDados();
 
-	public Carterinha cadastrarVacina(Carterinha carterinha) {
+	public List<Vacina> cadastrarVacina(List<Vacina> vacinas) {
 		Scanner sc = new Scanner(System.in);
 		Scanner scInt = new Scanner(System.in);
-
-		ArrayList<Vacina> vacinas = new ArrayList<Vacina>();
-		vacinas = carterinha.getCarterinha();
 		
 		System.out.println("Digite 'sim' para todas as vacinas que o animal já tomou.");
 		for (Vacina vacina : vacinas) {
@@ -34,11 +33,11 @@ public class CadastrarAnimal {
 		sc.close();
 		scInt.close();
 
-		return carterinha;
+		return vacinas;
 
 	}
 
-	public Bovino cadastrarBovino(Carterinha carterinha) {
+	public Bovino cadastrarBovino() {
 		Scanner sc = new Scanner(System.in);
 		Scanner scInt = new Scanner(System.in);
 		System.out.println("Registro Unico: ");
@@ -51,20 +50,21 @@ public class CadastrarAnimal {
 		String genero = sc.nextLine();
 		System.out.println("Data de Nascimento: ");
 		String dataNascimento = sc.nextLine();
-		
 
-		CadastrarAnimal cadastrarAnimal = new CadastrarAnimal();
-		Carterinha carterinhaAtualizada = cadastrarAnimal.cadastrarVacina(carterinha);
+		Bovino bovino = new Bovino(registroUnico, peso, raca, genero, dataNascimento, null);
+		bovino.setVacinas(baseDados.popularListaVacinasBovino());
+		
+		List<Vacina> vacinas = new ArrayList<Vacina>();
+		vacinas = cadastrarVacina(bovino.getVacinas());
+		bovino.setVacinas(vacinas);
 		
 		sc.close();
 		scInt.close();
-
-		Bovino bovino = new Bovino(registroUnico, peso, raca, genero, dataNascimento, carterinhaAtualizada);
 		return bovino;
 	}
 
 
-	public Suino cadastrarSuino(Carterinha carterinha) {
+	public Suino cadastrarSuino() {
 		Scanner sc = new Scanner(System.in);
 		Scanner scInt = new Scanner(System.in);
 		System.out.println("Registro Unico: ");
@@ -76,16 +76,17 @@ public class CadastrarAnimal {
 		System.out.println("Genero: ");
 		String genero = sc.nextLine();
 		System.out.println("Data de Nascimento: ");
-		String dataNascimento = sc.nextLine();
-		
+		String dataNascimento = sc.nextLine();	
 
-		CadastrarAnimal cadastrarAnimal = new CadastrarAnimal();
-		Carterinha carterinhaAtualizada = cadastrarAnimal.cadastrarVacina(carterinha);
+		Suino suino = new Suino(registroUnico, peso, raca, genero, dataNascimento, null);
+		suino.setVacinas(baseDados.popularListaVacinasSuino());
+		
+		List<Vacina> vacinas = new ArrayList<Vacina>();
+		vacinas = cadastrarVacina(suino.getVacinas());
+		suino.setVacinas(vacinas);
 		
 		sc.close();
 		scInt.close();
-
-		Suino suino = new Suino(registroUnico, peso, raca, genero, dataNascimento, carterinhaAtualizada);
 		return suino;
 	}
 
