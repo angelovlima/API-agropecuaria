@@ -1,11 +1,14 @@
 package br.com.fatec.agropecuaria.services;
 
 import java.util.List;
+import java.util.Scanner;
 
 import br.com.fatec.agropecuaria.model.animais.Bovino;
 import br.com.fatec.agropecuaria.model.animais.Suino;
 import br.com.fatec.agropecuaria.model.precos.Arroba;
 import br.com.fatec.agropecuaria.model.precos.Quilo;
+import br.com.fatec.agropecuaria.model.vendas.Venda;
+
 
 public class Calculador {
 
@@ -171,17 +174,11 @@ public class Calculador {
 	
 	public double calcularPrecoSuinoArroba(String identificador, List<Suino> suinos, Arroba preco) {
 		double precoSuino = 0;
-		int check = 0;
 		for(Suino suino: suinos) {
 			if(suino.getRegistroUnico().equals(identificador)) {
 				precoSuino += suino.getPeso() * preco.getPreco();
-				check = 1;
 				
-			}
-
-		}
-		if(check == 0) {
-			System.out.println("Este animal não existe nos registros");
+			}	
 		}
 		
 		return precoSuino;
@@ -189,16 +186,11 @@ public class Calculador {
 	
 	public double calcularPrecoBovinoArroba(String identificador, List<Bovino> bovinos, Arroba preco) {
 		double precoBovino = 0;
-		int check = 0;
 		for(Bovino bovino: bovinos) {
 			if(bovino.getRegistroUnico().equals(identificador)) {
 				precoBovino += bovino.getPeso() * preco.getPreco();
-				check = 1;
-			}
-
-		}
-		if(check == 0) {
-			System.out.println("Este animal não existe nos registros");
+				
+			}	
 		}
 		
 		return precoBovino;
@@ -206,30 +198,51 @@ public class Calculador {
 	
 	public double calcularPrecoBovinoQuilo(String identificador, List<Bovino> bovinos, Quilo preco) {
 		double precoBovino = 0;
-		int check  = 0;
 		for(Bovino bovino: bovinos) {
 			if(bovino.getRegistroUnico().equals(identificador)) {
 				precoBovino += (bovino.getPeso() * 15) * preco.getPreco();
-				check = 1;
 				
-			}
+			}	
 		}
+		
 		return precoBovino;
 	}
 	
 	public double calcularPrecoSuinoQuilo(String identificador, List<Suino> suinos, Quilo preco) {
 		double precoSuino = 0;
-		int check = 0;
 		for(Suino suino: suinos) {
 			if(suino.getRegistroUnico().equals(identificador)) {
 				precoSuino += (suino.getPeso() * 15) * preco.getPreco();
-				check = 1;
-			}
-			
+				
+			}	
 		}
 	
 		return precoSuino;
 	}
 	
+	public void vendaSuino(String identificador, Scanner sc, List<Suino> suinos, Double valorTotalVenda, List<Suino> suinosVenda, Arroba precoArroba, Venda venda, List<Venda> vendasPorco) {
+		int check = 0;
+		Suino suinoRemovido = null;
+		System.out.println("Digite o identificador do suíno: ");
+		identificador = sc.nextLine();
+		for (Suino suino : suinos) {
+			if (suino.getRegistroUnico().equals(identificador)) {
+				suinosVenda.add(suino);
+				suinoRemovido = suino;
+				valorTotalVenda = (valorTotalVenda + (suino.getPeso() * precoArroba.getPreco()));
+				System.out.println(suino.getRegistroUnico());
+				check = 1;
+				venda.setValorTotal(valorTotalVenda);
+				venda.setSuinos(suinosVenda);
+				vendasPorco.add(venda);
+			}
+		}
+		System.out.println(check);
+		if (check == 0) {
+			System.out.println("Este animal não existe nos registros");
+		} else {
+			suinos.remove(suinoRemovido);
+		}
+	}
 	
 }

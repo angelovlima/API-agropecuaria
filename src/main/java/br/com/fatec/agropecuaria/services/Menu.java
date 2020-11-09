@@ -12,9 +12,12 @@ import br.com.fatec.agropecuaria.model.vendas.Venda;
 
 public class Menu {
 
+	@SuppressWarnings("resource")
 	public void menu() {
 
+		
 		Scanner sc = new Scanner(System.in);
+		
 		Scanner scInt = new Scanner(System.in);
 
 		BaseDados baseDados = new BaseDados();
@@ -25,12 +28,12 @@ public class Menu {
 		List<Bovino> bovinos = new ArrayList<Bovino>();
 		bovinos = baseDados.popularListaBois();
 
-		List<Bovino> bovinosVendidos = new ArrayList<Bovino>();
+
 
 		List<Suino> suinos = new ArrayList<Suino>();
 		suinos = baseDados.popularListaPorcos();
 
-		List<Suino> suinosVendidos = new ArrayList<Suino>();
+
 
 		CadastrarAnimal cadastrarAnimal = new CadastrarAnimal();
 		Relatorios relatorios = new Relatorios();
@@ -154,28 +157,7 @@ public class Menu {
 						///////////////////////// FUTURA FUNCAO////////////////////////
 						menu4 = 100;
 						while (menu4 != 0) {
-							int check = 0;
-							Suino suinoRemovido = null;
-							System.out.println("Digite o identificador do suíno: ");
-							identificador = sc.nextLine();
-							for (Suino suino : suinos) {
-								if (suino.getRegistroUnico().equals(identificador)) {
-									suinosVenda.add(suino);
-									suinoRemovido = suino;
-									valorTotalVenda = (valorTotalVenda + (suino.getPeso() * precoArroba.getPreco()));
-									System.out.println(suino.getRegistroUnico());
-									check = 1;
-									venda.setValorTotal(valorTotalVenda);
-									venda.setSuinos(suinosVenda);
-									vendasPorco.add(venda);
-								}
-							}
-							System.out.println(check);
-							if (check == 0) {
-								System.out.println("Este animal não existe nos registros");
-							} else {
-								suinos.remove(suinoRemovido);
-							}
+							calcular.vendaSuino(identificador, sc, suinos, valorTotalVenda, suinosVenda, precoArroba, venda, vendasPorco);
 							String continuarVenda = "nao";
 							System.out.println("Deseja continuar? (Digite 'sim' para continuar)");
 							continuarVenda = sc.nextLine();
