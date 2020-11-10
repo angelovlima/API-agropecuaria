@@ -51,38 +51,60 @@ public class Relatorios {
 	
 	public double precoUnicoBovinoArroba(String identificador, List<Bovino> bovinos, Arroba precoArroba, double totalPrecoArroba) {
 		double bovinoArroba = calculador.calcularPrecoBovinoArroba(identificador, bovinos, precoArroba);
-		System.out.println("Preço do Bovino por Arroba: " + bovinoArroba);
+		if(bovinoArroba > 0) {
+			System.out.println("Preço do Bovino por Arroba: " + bovinoArroba);
+		}else {
+			System.out.println("Não exite este animal nos registro");
+		}
+		
 		totalPrecoArroba += bovinoArroba;
 		return totalPrecoArroba;
 	}
 	
 	public double precoUnicoBovinoQuilo(String identificador, List<Bovino> bovinos, Quilo precoQuilo, double totalPrecoQuilo) {
 		double bovinoQuilo = calculador.calcularPrecoBovinoQuilo(identificador, bovinos, precoQuilo);
-		System.out.println("Preço do Bovino por Quilo: " + bovinoQuilo);
+		if(bovinoQuilo > 0) {
+			System.out.println("Preço do Bovino por Quilo: " + bovinoQuilo);
+		}
 		totalPrecoQuilo += bovinoQuilo;
 		return totalPrecoQuilo;
 	}
 	
 	public double precoUnicoSuinoArroba(String identificador, List<Suino> suinos, Arroba precoArroba, double totalPrecoArroba) {
 		double suinoArroba = calculador.calcularPrecoSuinoArroba(identificador, suinos, precoArroba);
-		System.out.println("Preço do Suíno por Arroba: " + suinoArroba);
+		
+		if(suinoArroba > 0) {
+			System.out.println("Preço do Suíno por Arroba: " + suinoArroba);
+		}else {
+			System.out.println("Não exite este animal nos registro");
+		}	
 		totalPrecoArroba += suinoArroba;
 		return totalPrecoArroba;
 	}
 	
 	public double precoUnicoSuinoQuilo(String identificador, List<Suino> suinos, Quilo precoQuilo, double totalPrecoQuilo) {
 		double suinoQuilo = calculador.calcularPrecoSuinoQuilo(identificador, suinos, precoQuilo);
-		System.out.println("Preço do Suíno por Quilo: " + suinoQuilo);
+		
+		if(suinoQuilo > 0) {
+			System.out.println("Preço do Suíno por Quilo: " + suinoQuilo);
+		}
+		
 		totalPrecoQuilo += suinoQuilo;
 		return totalPrecoQuilo;
 	}
 	
 	public void precoTotalArroba(double totalPrecoArroba) {
-		System.out.println("Preço total em Arroba: " + totalPrecoArroba);
+		if(totalPrecoArroba > 0) {
+			System.out.println("Preço total em Arroba: " + totalPrecoArroba);
+		}
+		
 	}
 	
 	public void precoTotalQuilo(double totalPrecoQuilo) {
-		System.out.println("Preço total em Quilo: " + totalPrecoQuilo);
+		if(totalPrecoQuilo > 0) {
+			System.out.println("Preço total em Quilo: " + totalPrecoQuilo);
+		}
+		
 	}
 	
 	public void registroVendas(List<Venda> vendasBoi, List<Venda> vendasPorco, Arroba precoArroba, Quilo precoQuilo) {
