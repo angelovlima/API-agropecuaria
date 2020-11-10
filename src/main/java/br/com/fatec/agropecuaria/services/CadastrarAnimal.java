@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import br.com.fatec.agropecuaria.model.animais.Bovino;
-import br.com.fatec.agropecuaria.model.animais.Suino;
+import br.com.fatec.agropecuaria.model.animais.Animal;
 import br.com.fatec.agropecuaria.model.vacina.Vacina;
 
 public class CadastrarAnimal {
@@ -37,7 +36,7 @@ public class CadastrarAnimal {
 
 	}
 
-	public Bovino cadastrarBovino() {
+	public Animal cadastrarBovino() {
 		Scanner sc = new Scanner(System.in);
 		Scanner scInt = new Scanner(System.in);
 		System.out.println("Registro Unico: ");
@@ -51,7 +50,7 @@ public class CadastrarAnimal {
 		System.out.println("Data de Nascimento: ");
 		String dataNascimento = sc.nextLine();
 
-		Bovino bovino = new Bovino(registroUnico, peso, raca, genero, dataNascimento, null);
+		Animal bovino = new Animal(registroUnico, peso, raca, genero, dataNascimento, null, "bovino");
 		bovino.setVacinas(baseDados.popularListaVacinasBovino());
 		
 		List<Vacina> vacinas = new ArrayList<Vacina>();
@@ -64,7 +63,7 @@ public class CadastrarAnimal {
 	}
 
 
-	public Suino cadastrarSuino() {
+	public Animal cadastrarSuino() {
 		Scanner sc = new Scanner(System.in);
 		Scanner scInt = new Scanner(System.in);
 		System.out.println("Registro Unico: ");
@@ -78,7 +77,7 @@ public class CadastrarAnimal {
 		System.out.println("Data de Nascimento: ");
 		String dataNascimento = sc.nextLine();	
 
-		Suino suino = new Suino(registroUnico, peso, raca, genero, dataNascimento, null);
+		Animal suino = new Animal(registroUnico, peso, raca, genero, dataNascimento, null, "suino");
 		suino.setVacinas(baseDados.popularListaVacinasSuino());
 		
 		List<Vacina> vacinas = new ArrayList<Vacina>();

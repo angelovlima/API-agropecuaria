@@ -4,10 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import br.com.fatec.agropecuaria.model.animais.Bovino;
-import br.com.fatec.agropecuaria.model.animais.Suino;
-import br.com.fatec.agropecuaria.model.precos.Arroba;
-import br.com.fatec.agropecuaria.model.precos.Quilo;
+import br.com.fatec.agropecuaria.model.animais.Animal;
+import br.com.fatec.agropecuaria.model.precos.Preco;
 import br.com.fatec.agropecuaria.model.vendas.Venda;
 
 public class Menu {
@@ -15,33 +13,25 @@ public class Menu {
 	@SuppressWarnings("resource")
 	public void menu() {
 
-		
 		Scanner sc = new Scanner(System.in);
-		
+
 		Scanner scInt = new Scanner(System.in);
 
 		BaseDados baseDados = new BaseDados();
 
-		Arroba precoArroba = baseDados.definirPrecoArroba();
-		Quilo precoQuilo = baseDados.definirPrecoQuilo();
+		Preco precoArroba = baseDados.definirPrecoArroba();
+		Preco precoQuilo = baseDados.definirPrecoQuilo();
 
-		List<Bovino> bovinos = new ArrayList<Bovino>();
-		bovinos = baseDados.popularListaBois();
-
-
-
-		List<Suino> suinos = new ArrayList<Suino>();
-		suinos = baseDados.popularListaPorcos();
-
-
+		List<Animal> animais = new ArrayList<Animal>();
+		animais = baseDados.popularListaAnimais();
 
 		CadastrarAnimal cadastrarAnimal = new CadastrarAnimal();
 		Relatorios relatorios = new Relatorios();
 
 		Calculador calcular = new Calculador();
 
-		List<Venda> vendasPorco = new ArrayList<Venda>();
 		List<Venda> vendasBoi = new ArrayList<Venda>();
+		List<Venda> vendasPorco = new ArrayList<Venda>();
 
 		int menu = 100;
 		int menu2 = 100;
@@ -59,72 +49,50 @@ public class Menu {
 			switch (menu) {
 
 			case 1:
-				bovinos.add(cadastrarAnimal.cadastrarBovino());
+				animais.add(cadastrarAnimal.cadastrarBovino());
 				break;
 
 			case 2:
-				suinos.add(cadastrarAnimal.cadastrarSuino());
+				animais.add(cadastrarAnimal.cadastrarSuino());
 				break;
 
 			case 3:
 				double totalPrecoArroba = 0;
 				double totalPrecoQuilo = 0;
-				while (menu2 != 0) {
-					System.out.println("\nESCOLHA UM TIPO DE ANIMAL\n" + "0: Sair \n" + "1: Bovino \n" + "2: Suino \n");
 
-					menu2 = scInt.nextInt();
-					String identificador;
+				String identificador;
 
-					switch (menu2) {
-					case 1:
-						relatorios.registroUnicoBovino(bovinos);
-						System.out.println("Digite o identificador do bovino: ");
-						identificador = sc.nextLine();
-						
-						
-						totalPrecoArroba = relatorios.precoUnicoBovinoArroba(identificador, bovinos, precoArroba, totalPrecoArroba);
-						totalPrecoQuilo = relatorios.precoUnicoBovinoQuilo(identificador, bovinos, precoQuilo, totalPrecoQuilo);
-		
-						break;
+				relatorios.registroUnicoBovino(animais);
+				System.out.println("Digite o identificador do bovino: ");
+				identificador = sc.nextLine();
 
-					case 2:
-						relatorios.registroUnicoSuino(suinos);
-						System.out.println("Digite o identificador do suíno: ");
-						identificador = sc.nextLine();
-						
-						totalPrecoArroba = relatorios.precoUnicoSuinoArroba(identificador, suinos, precoArroba, totalPrecoArroba);
-						totalPrecoQuilo = relatorios.precoUnicoSuinoQuilo(identificador, suinos, precoQuilo, totalPrecoQuilo);
+				totalPrecoArroba = relatorios.precoUnicoBovinoArroba(identificador, animais, precoArroba,
+						totalPrecoArroba);
+				totalPrecoQuilo = relatorios.precoUnicoBovinoQuilo(identificador, animais, precoQuilo, totalPrecoQuilo);
 
-						break;
-
-					default:
-						break;
-					}
-					
-					relatorios.precoTotalArroba(totalPrecoArroba);
-					relatorios.precoTotalQuilo(totalPrecoQuilo);
-				}
+				relatorios.precoTotalArroba(totalPrecoArroba);
+				relatorios.precoTotalQuilo(totalPrecoQuilo);
 
 				break;
 
 			case 4:
-				relatorios.quantidadeTotalAnimaisCadastrados(bovinos, suinos);
+				relatorios.quantidadeTotalAnimaisCadastrados(animais);
 				break;
 
 			case 5:
-				relatorios.precoDoRebanho(bovinos, suinos, precoArroba, precoQuilo);
+				relatorios.precoDoRebanho(animais, precoArroba, precoQuilo);
 				break;
 
 			case 6:
-				relatorios.pesoDoRebanhoQuiloArroba(bovinos, suinos);
+				relatorios.pesoDoRebanhoQuiloArroba(animais);
 				break;
 
 			case 7:
-				relatorios.quantidadeFemeaMacho(bovinos, suinos);
+				relatorios.quantidadeFemeaMacho(animais);
 				break;
 
 			case 8:
-				relatorios.dadosVacina(bovinos, suinos);
+				relatorios.dadosVacina(animais);
 				break;
 			case 9:
 				menu3 = 1;
@@ -133,28 +101,29 @@ public class Menu {
 							+ "3: Registro de Venda \n");
 
 					menu3 = scInt.nextInt();
-					
+
 					switch (menu3) {
 					case 1:
 						///////////////////////// FUTURA FUNCAO////////////////////////
-						
-						String identificador = "0";
+
+						String identificadorBovino = "0";
 						String dataVenda = null;
 						double valorTotalQuilo = 0;
 						double valorTotalArroba = 0;
 						System.out.println("Entre com a data da venda");
 						dataVenda = sc.nextLine();
 						Venda venda = new Venda(dataVenda);
-						List<Bovino> bovinosVenda = new ArrayList<Bovino>();
-						relatorios.registroUnicoBovino(bovinos);
+						List<Animal> bovinosVenda = new ArrayList<Animal>();
+						relatorios.registroUnicoBovino(animais);
 						///////////////////////// FUTURA FUNCAO////////////////////////
 						menu4 = 100;
 						while (menu4 != 0) {
-							calcular.calcularVendaBovino(identificador, sc, bovinos, valorTotalArroba, valorTotalQuilo, bovinosVenda, precoArroba, precoQuilo, venda, vendasBoi);
+							calcular.calcularVendaBovino(identificadorBovino, sc, animais, valorTotalArroba, valorTotalQuilo,
+									bovinosVenda, precoArroba, precoQuilo, venda, vendasBoi);
 							String continuarVenda = "nao";
 							System.out.println("Deseja continuar? (Digite 'sim' para continuar)");
 							continuarVenda = sc.nextLine();
-							if(!continuarVenda.equals("sim")) {
+							if (!continuarVenda.equals("sim")) {
 								menu4 = 0;
 							}
 							/////////////////////////////////////////////////////////////
@@ -163,7 +132,7 @@ public class Menu {
 
 					case 2:
 						///////////////////////// FUTURA FUNCAO////////////////////////
-						
+
 						String identificador1 = "0";
 						String dataVenda1 = null;
 						double valorTotalArroba1 = 0;
@@ -171,21 +140,22 @@ public class Menu {
 						System.out.println("Entre com a data da venda");
 						dataVenda1 = sc.nextLine();
 						Venda venda1 = new Venda(dataVenda1);
-						List<Suino> suinosVenda = new ArrayList<Suino>();
-						relatorios.registroUnicoSuino(suinos);
+						List<Animal> suinosVenda = new ArrayList<Animal>();
+						relatorios.registroUnicoSuino(animais);
 						///////////////////////// FUTURA FUNCAO////////////////////////
 						menu4 = 100;
 						while (menu4 != 0) {
-							calcular.calcularVendaSuino(identificador1, sc, suinos, valorTotalArroba1, valorTotalQuilo1, suinosVenda, precoArroba, precoQuilo, venda1, vendasPorco);
+							calcular.calcularVendaSuino(identificador1, sc, animais, valorTotalArroba1, valorTotalQuilo1,
+									suinosVenda, precoArroba, precoQuilo, venda1, vendasPorco);
 							String continuarVenda = "nao";
 							System.out.println("Deseja continuar? (Digite 'sim' para continuar)");
 							continuarVenda = sc.nextLine();
-							if(!continuarVenda.equals("sim")) {
+							if (!continuarVenda.equals("sim")) {
 								menu4 = 0;
 							}
 							/////////////////////////////////////////////////////////////
 						}
-					
+
 						break;
 
 					case 3:

@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public abstract class Preco {
+public class Preco {
 
 	private Double preco;
 	

@@ -2,8 +2,7 @@ package br.com.fatec.agropecuaria.model.vendas;
 
 import java.util.List;
 
-import br.com.fatec.agropecuaria.model.animais.Bovino;
-import br.com.fatec.agropecuaria.model.animais.Suino;
+import br.com.fatec.agropecuaria.model.animais.Animal;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,20 +14,13 @@ public class Venda {
 	private String dataVenda;
 	private Double valorTotalArroba;
 	private Double valorTotalQuilo;
-	private List<Suino> suinos;
-	private List<Bovino> bovinos;
+	private List<Animal> animais;
 
-	public Venda(String dataVenda, Double valorTotalArroba, List<Suino> suinos) {
+	public Venda(String dataVenda, Double valorTotalArroba, List<Animal> animais) {
 		this.dataVenda = dataVenda;
 		this.valorTotalArroba = valorTotalArroba;
 		
-		this.suinos = suinos;
-	}
-	
-	public Venda(String dataVenda, List<Bovino> bovinos, Double valorTotalArroba) {
-		this.dataVenda = dataVenda;
-		this.valorTotalArroba = valorTotalArroba;
-		this.bovinos = bovinos;
+		this.animais = animais;
 	}
 	
 	public Venda(String dataVenda, Double valorTotalArroba) {

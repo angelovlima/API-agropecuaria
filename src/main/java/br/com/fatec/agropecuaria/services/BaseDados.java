@@ -4,26 +4,25 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import br.com.fatec.agropecuaria.model.animais.Bovino;
-import br.com.fatec.agropecuaria.model.animais.Suino;
-import br.com.fatec.agropecuaria.model.precos.Arroba;
-import br.com.fatec.agropecuaria.model.precos.Quilo;
+import br.com.fatec.agropecuaria.model.animais.Animal;
+import br.com.fatec.agropecuaria.model.precos.Preco;
 import br.com.fatec.agropecuaria.model.vacina.Vacina;
 
 public class BaseDados {
 
-	public List<Bovino> popularListaBois() {
+	public List<Animal> popularListaAnimais() {
 		Random gerador = new Random();
-		List<Bovino> bovinos = new ArrayList<Bovino>();
+		List<Animal> animais = new ArrayList<Animal>();
 		for (int i = 1; i <= 10; i++) {			
 		
-			Bovino boi = new Bovino(gerador.nextInt(100) +"00" + gerador.nextInt(100), 
+			Animal boi = new Animal(gerador.nextInt(100) +"00" + gerador.nextInt(100), 
 					(double) (gerador.nextInt(1000)/15), 
 					"boi"+i, 
 					(i % 2 == 0)?"M":"F", 
 					(gerador.nextInt(20)+10)+"/0"+(gerador.nextInt(8)+1)+"/"+(2000 + gerador.nextInt(20)), 
-					null);
-			bovinos.add(boi);
+					null,
+					"bovino");
+			animais.add(boi);
 			
 			boi.setVacinas(popularListaVacinasBovino());
 			for (Vacina vacina : boi.getVacinas()) {
@@ -36,21 +35,16 @@ public class BaseDados {
 				}
 			}
 		}
-		return bovinos;
-	}
-	
-	public List<Suino> popularListaPorcos() {
-		Random gerador = new Random();
-		List<Suino> suinos = new ArrayList<Suino>();
 		for (int i = 1; i <= 10; i++) {
 			
-			Suino porco = new Suino(gerador.nextInt(100) +"00" + gerador.nextInt(100), 
+			Animal porco = new Animal(gerador.nextInt(100) +"00" + gerador.nextInt(100), 
 					(double) (gerador.nextInt(500)/15), 
 					"porco"+i, 
 					(i % 2 == 0)?"M":"F", 
 					(gerador.nextInt(20)+10)+"/0"+(gerador.nextInt(8)+1)+"/"+(2000 + gerador.nextInt(20)), 
-					null);
-			suinos.add(porco);
+					null,
+					"suino");
+			animais.add(porco);
 			if(i == 1) {
 				porco.setRegistroUnico("900");
 			}
@@ -78,8 +72,7 @@ public class BaseDados {
 			}
 
 		}
-	
-		return suinos;
+		return animais;
 	}
 	
 	public ArrayList<Vacina> popularListaVacinasBovino() { 
@@ -132,13 +125,13 @@ public class BaseDados {
 	
 	}
 	
-	public Quilo definirPrecoQuilo() {
-		Quilo precoQuilo = new Quilo(25.00);
+	public Preco definirPrecoQuilo() {
+		Preco precoQuilo = new Preco(25.00);
 		return precoQuilo;
 	}
 	
-	public Arroba definirPrecoArroba() {
-		Arroba precoArroba = new Arroba(167.00);
+	public Preco definirPrecoArroba() {
+		Preco precoArroba = new Preco(167.00);
 		return precoArroba;
 	}
 }

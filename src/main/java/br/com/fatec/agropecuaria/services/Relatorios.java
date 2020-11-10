@@ -2,54 +2,55 @@ package br.com.fatec.agropecuaria.services;
 
 import java.util.List;
 
-import br.com.fatec.agropecuaria.model.animais.Bovino;
-import br.com.fatec.agropecuaria.model.animais.Suino;
-import br.com.fatec.agropecuaria.model.precos.Arroba;
-import br.com.fatec.agropecuaria.model.precos.Quilo;
+import br.com.fatec.agropecuaria.model.animais.Animal;
+import br.com.fatec.agropecuaria.model.precos.Preco;
 import br.com.fatec.agropecuaria.model.vendas.Venda;
 
 public class Relatorios {
 
 	Calculador calculador = new Calculador();
-	public void quantidadeTotalAnimaisCadastrados(List<Bovino> bovinos, List<Suino> suinos) {
-		System.out.println("Quantidade total de animais cadastrados:" + calculador.calcularTotalAnimais(bovinos, suinos));
+	public void quantidadeTotalAnimaisCadastrados(List<Animal> animais) {
+		System.out.println("Quantidade total de animais cadastrados:" + calculador.calcularTotalAnimais(animais));
 	}
 	
-	public void precoDoRebanho(List<Bovino> bovinos, List<Suino> suinos, Arroba precoArroba, Quilo precoQuilo) {
+	public void precoDoRebanho(List<Animal> animais, Preco precoArroba, Preco precoQuilo) {
 		System.out.println("Preço total do rebanho em quilo: " +
-				calculador.calcularPrecoQuilo( bovinos, suinos, precoQuilo));
+				calculador.calcularPrecoQuilo( animais, precoQuilo));
 		System.out.println("Preço total do rebanho em arroba: " + 
-				calculador.calcularPrecoArroba(bovinos, suinos, precoArroba));
+				calculador.calcularPrecoArroba(animais, precoArroba));
 	}
 	
-	public void pesoDoRebanhoQuiloArroba(List<Bovino> bovinos, List<Suino> suinos) {
-		System.out.println("Peso total quilo:" + calculador.calcularPesoQuilo(bovinos, suinos));
-		System.out.println("Peso total arroba:" + calculador.calcularPesoArroba(bovinos, suinos));
+	public void pesoDoRebanhoQuiloArroba(List<Animal> animais) {
+		System.out.println("Peso total quilo:" + calculador.calcularPesoQuilo(animais));
+		System.out.println("Peso total arroba:" + calculador.calcularPesoArroba(animais));
 	}
 	
-	public void quantidadeFemeaMacho(List<Bovino> bovinos, List<Suino> suinos) {
-		System.out.println("Quantidade Femeas:" +calculador.calcularFemea(bovinos, suinos));
-		System.out.println("Quantidade Machos:" + calculador.calcularMacho(bovinos, suinos));
+	public void quantidadeFemeaMacho(List<Animal> animais) {
+		System.out.println("Quantidade Femeas:" +calculador.calcularFemea(animais));
+		System.out.println("Quantidade Machos:" + calculador.calcularMacho(animais));
 	}
 	
-	public void dadosVacina(List<Bovino> bovinos, List<Suino> suinos) {
-		System.out.println("Porcentagem do rebanho vacinada: "+calculador.calcularPorcentagem(bovinos, suinos)+"%");
-		System.out.println("Quantos faltam vacinar: "+calculador.faltamVacinar(bovinos, suinos));
+	public void dadosVacina(List<Animal> animais) {
+		System.out.println("Porcentagem do rebanho vacinada: "+calculador.calcularPorcentagem(animais)+"%");
+		System.out.println("Quantos faltam vacinar: "+calculador.faltamVacinar(animais));
 	}
 	
-	public void registroUnicoBovino(List<Bovino> bovinos) {
-		for (Bovino bovino: bovinos) {
-			System.out.println("Registro: "+bovino.getRegistroUnico());
+	public void registroUnicoBovino(List<Animal> bovinos) {
+		for (Animal bovino: bovinos) {
+			if(bovino.getTipo().equals("bovino")) {
+				System.out.println("Registro: "+bovino.getRegistroUnico());
+			}
 		}
 	}
 	
-	public void registroUnicoSuino(List<Suino> suinos) {
-		for (Suino suino: suinos) {
+	public void registroUnicoSuino(List<Animal> suinos) {
+		for (Animal suino: suinos) {
+			if(suino.getTipo().equals("suino"))
 			System.out.println("Registro: "+suino.getRegistroUnico());
 		}
 	}
 	
-	public double precoUnicoBovinoArroba(String identificador, List<Bovino> bovinos, Arroba precoArroba, double totalPrecoArroba) {
+	public double precoUnicoBovinoArroba(String identificador, List<Animal> bovinos, Preco precoArroba, double totalPrecoArroba) {
 		double bovinoArroba = calculador.calcularPrecoBovinoArroba(identificador, bovinos, precoArroba);
 		if(bovinoArroba > 0) {
 			System.out.println("Preço do Bovino por Arroba: " + bovinoArroba);
@@ -61,7 +62,7 @@ public class Relatorios {
 		return totalPrecoArroba;
 	}
 	
-	public double precoUnicoBovinoQuilo(String identificador, List<Bovino> bovinos, Quilo precoQuilo, double totalPrecoQuilo) {
+	public double precoUnicoBovinoQuilo(String identificador, List<Animal> bovinos, Preco precoQuilo, double totalPrecoQuilo) {
 		double bovinoQuilo = calculador.calcularPrecoBovinoQuilo(identificador, bovinos, precoQuilo);
 		if(bovinoQuilo > 0) {
 			System.out.println("Preço do Bovino por Quilo: " + bovinoQuilo);
@@ -70,7 +71,7 @@ public class Relatorios {
 		return totalPrecoQuilo;
 	}
 	
-	public double precoUnicoSuinoArroba(String identificador, List<Suino> suinos, Arroba precoArroba, double totalPrecoArroba) {
+	public double precoUnicoSuinoArroba(String identificador, List<Animal> suinos, Preco precoArroba, double totalPrecoArroba) {
 		double suinoArroba = calculador.calcularPrecoSuinoArroba(identificador, suinos, precoArroba);
 		
 		if(suinoArroba > 0) {
@@ -82,7 +83,7 @@ public class Relatorios {
 		return totalPrecoArroba;
 	}
 	
-	public double precoUnicoSuinoQuilo(String identificador, List<Suino> suinos, Quilo precoQuilo, double totalPrecoQuilo) {
+	public double precoUnicoSuinoQuilo(String identificador, List<Animal> suinos, Preco precoQuilo, double totalPrecoQuilo) {
 		double suinoQuilo = calculador.calcularPrecoSuinoQuilo(identificador, suinos, precoQuilo);
 		
 		if(suinoQuilo > 0) {
@@ -107,7 +108,7 @@ public class Relatorios {
 		
 	}
 	
-	public void registroVendas(List<Venda> vendasBoi, List<Venda> vendasPorco, Arroba precoArroba, Quilo precoQuilo) {
+	public void registroVendas(List<Venda> vendasBoi, List<Venda> vendasPorco, Preco precoArroba, Preco precoQuilo) {
 		if(vendasPorco.size() != 0) {
 			System.out.println("//////////////////// REGISTRO DE VENDAS DE SUINOS ////////////////////\n\n");
 			for (Venda venda : vendasPorco) {
@@ -116,7 +117,7 @@ public class Relatorios {
 				System.out.println("Valor total da venda em KG: " + venda.getValorTotalQuilo() + "\n");
 				System.out.println("Total de animais vendidos: " + vendasPorco.size() + "\n");
 				System.out.println("### Lista de Animais Vendidos ###\n");
-				for (Suino suino : venda.getSuinos()) {
+				for (Animal suino : venda.getAnimais()) {
 					System.out.println("////////////////////////////////////////\n");
 					System.out.println("Registro único: " + suino.getRegistroUnico() + "\n");
 					System.out.println("Peso do animal: " + suino.getPeso() + " Arrobas \n");
@@ -136,7 +137,7 @@ public class Relatorios {
 				System.out.println("Valor total da venda em KG: " + venda.getValorTotalQuilo() + "\n");
 				System.out.println("Total de animais vendidos: " + vendasBoi.size() + "\n");
 				System.out.println("### Lista de Animais Vendidos ###\n");
-				for (Bovino bovino : venda.getBovinos()) {
+				for (Animal bovino : venda.getAnimais()) {
 					System.out.println("////////////////////////////////////////\n");
 					System.out.println("Registro único: " + bovino.getRegistroUnico() + "\n");
 					System.out.println("Peso do animal: " + bovino.getPeso() + " Arrobas \n");

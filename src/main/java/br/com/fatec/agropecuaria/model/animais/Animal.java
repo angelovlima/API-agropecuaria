@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public abstract class Animal {
+public class Animal {
 
 	private String registroUnico;
 	private Double peso;
@@ -18,5 +18,6 @@ public abstract class Animal {
 	private String genero;
 	private String dataNascimento;
 	private List<Vacina> vacinas;
+	private String tipo;
 
 }

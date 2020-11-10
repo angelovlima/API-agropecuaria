@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class-diagram version="1.2.4" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+<class-diagram version="1.2.2" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <class id="1" language="java" name="br.com.fatec.agropecuaria.services.Menu" project="agropecuaria" 
     file="/agropecuaria/src/main/java/br/com/fatec/agropecuaria/services/Menu.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="804" y="825"/>    
+    <position height="-1" width="-1" x="752" y="693"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -13,7 +13,7 @@
   <class id="2" language="java" name="br.com.fatec.agropecuaria.services.BaseDados" project="agropecuaria" 
     file="/agropecuaria/src/main/java/br/com/fatec/agropecuaria/services/BaseDados.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1049" y="433"/>    
+    <position height="-1" width="-1" x="1049" y="373"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -43,7 +43,7 @@
   <class id="5" language="java" name="br.com.fatec.agropecuaria.services.Relatorios" project="agropecuaria" 
     file="/agropecuaria/src/main/java/br/com/fatec/agropecuaria/services/Relatorios.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1565" y="934"/>    
+    <position height="-1" width="-1" x="1553" y="692"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -53,7 +53,7 @@
   <class id="6" language="java" name="br.com.fatec.agropecuaria.model.vacina.Vacina" project="agropecuaria" 
     file="/agropecuaria/src/main/java/br/com/fatec/agropecuaria/model/vacina/Vacina.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="220" y="324"/>    
+    <position height="-1" width="-1" x="266" y="322"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -63,7 +63,7 @@
   <class id="7" language="java" name="br.com.fatec.agropecuaria.model.vendas.Venda" project="agropecuaria" 
     file="/agropecuaria/src/main/java/br/com/fatec/agropecuaria/model/vendas/Venda.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="445" y="1034"/>    
+    <position height="-1" width="-1" x="507" y="846"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -73,34 +73,14 @@
   <class id="8" language="java" name="br.com.fatec.agropecuaria.model.precos.Preco" project="agropecuaria" 
     file="/agropecuaria/src/main/java/br/com/fatec/agropecuaria/model/precos/Preco.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1116" y="840"/>    
+    <position height="-1" width="-1" x="1012" y="670"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="br.com.fatec.agropecuaria.model.precos.Arroba" project="agropecuaria" 
-    file="/agropecuaria/src/main/java/br/com/fatec/agropecuaria/model/precos/Arroba.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1258" y="1132"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="10" language="java" name="br.com.fatec.agropecuaria.model.precos.Quilo" project="agropecuaria" 
-    file="/agropecuaria/src/main/java/br/com/fatec/agropecuaria/model/precos/Quilo.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="928" y="1172"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="11" language="java" name="br.com.fatec.agropecuaria.model.animais.Animal" project="agropecuaria" 
+  <class id="9" language="java" name="br.com.fatec.agropecuaria.model.animais.Animal" project="agropecuaria" 
     file="/agropecuaria/src/main/java/br/com/fatec/agropecuaria/model/animais/Animal.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="634" y="322"/>    
@@ -110,78 +90,42 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="12" language="java" name="br.com.fatec.agropecuaria.model.animais.Bovino" project="agropecuaria" 
-    file="/agropecuaria/src/main/java/br/com/fatec/agropecuaria/model/animais/Bovino.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="226" y="630"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="13" language="java" name="br.com.fatec.agropecuaria.model.animais.Suino" project="agropecuaria" 
-    file="/agropecuaria/src/main/java/br/com/fatec/agropecuaria/model/animais/Suino.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="612" y="656"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <association id="14">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="15" name="vacinas">        
-        <position height="0" width="0" x="0" y="0"/>      
+  <association id="10">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="11" name="vacinas">        
+        <position height="0" width="0" x="46" y="-2"/>      
       </attribute>      
-      <multiplicity id="16" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <multiplicity id="12" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="46" y="-2"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="6" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="17">    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="11"/>  
-  </generalization>  
-  <association id="18">    
+  <association id="13">    
     <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="19" name="baseDados">        
-        <position height="0" width="0" x="-130" y="44"/>      
+      <attribute id="14" name="baseDados">        
+        <position height="0" width="0" x="-130" y="-16"/>      
       </attribute>      
-      <multiplicity id="20" minimum="0" maximum="1">        
-        <position height="0" width="0" x="-130" y="44"/>      
+      <multiplicity id="15" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-130" y="-16"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="21">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="8"/>  
-  </generalization>  
-  <generalization id="22">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="8"/>  
-  </generalization>  
-  <association id="23">    
+  <association id="16">    
     <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="24" name="calculador">        
+      <attribute id="17" name="calculador">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="25" minimum="0" maximum="1">        
+      <multiplicity id="18" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="26">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="11"/>  
-  </generalization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    
