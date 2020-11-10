@@ -176,9 +176,6 @@ public class Calculador {
 			if(suino.getRegistroUnico().equals(identificador)) {
 				precoSuino += suino.getPeso() * preco.getPreco();
 				
-			}else if(!suino.getRegistroUnico().equals(identificador)) {
-			System.out.println("Este animal não existe nos registros");
-			break;
 			}
 		}
 		
@@ -191,10 +188,7 @@ public class Calculador {
 			if(bovino.getRegistroUnico().equals(identificador)) {
 				precoBovino += bovino.getPeso() * preco.getPreco();
 				
-			}else if(!bovino.getRegistroUnico().equals(identificador)){
-				System.out.println("Este animal não existe nos registros");
-				break;
-			}	
+			}
 		}
 		
 		return precoBovino;
