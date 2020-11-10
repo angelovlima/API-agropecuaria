@@ -2,7 +2,7 @@ package br.com.fatec.agropecuaria.model.animais;
 
 import java.util.List;
 
-import br.com.fatec.agropecuario.model.vacina.Vacina;
+import br.com.fatec.agropecuaria.model.vacina.Vacina;
 
 public class Bovino extends Animal{
 	

@@ -8,7 +8,7 @@ import br.com.fatec.agropecuaria.model.animais.Bovino;
 import br.com.fatec.agropecuaria.model.animais.Suino;
 import br.com.fatec.agropecuaria.model.precos.Arroba;
 import br.com.fatec.agropecuaria.model.precos.Quilo;
-import br.com.fatec.agropecuario.model.vacina.Vacina;
+import br.com.fatec.agropecuaria.model.vacina.Vacina;
 
 public class BaseDados {
 

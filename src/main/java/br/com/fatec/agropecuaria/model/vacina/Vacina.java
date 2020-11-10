@@ -1,4 +1,4 @@
-package br.com.fatec.agropecuario.model.vacina;
+package br.com.fatec.agropecuaria.model.vacina;
 
 import lombok.Getter;
 import lombok.Setter;

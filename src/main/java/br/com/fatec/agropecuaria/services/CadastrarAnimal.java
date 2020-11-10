@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 import br.com.fatec.agropecuaria.model.animais.Bovino;
 import br.com.fatec.agropecuaria.model.animais.Suino;
-import br.com.fatec.agropecuario.model.vacina.Vacina;
+import br.com.fatec.agropecuaria.model.vacina.Vacina;
 
 public class CadastrarAnimal {
 	
