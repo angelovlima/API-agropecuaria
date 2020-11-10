@@ -220,7 +220,7 @@ public class Calculador {
 		return precoSuino;
 	}
 	
-	public void vendaSuino(String identificador, Scanner sc, List<Suino> suinos, Double valorTotalVenda, List<Suino> suinosVenda, Arroba precoArroba, Venda venda, List<Venda> vendasPorco) {
+	public void calcularVendaSuino(String identificador, Scanner sc, List<Suino> suinos, Double valorTotalVenda, List<Suino> suinosVenda, Arroba precoArroba, Venda venda, List<Venda> vendasPorco) {
 		int check = 0;
 		Suino suinoRemovido = null;
 		System.out.println("Digite o identificador do suíno: ");
@@ -242,6 +242,31 @@ public class Calculador {
 			System.out.println("Este animal não existe nos registros");
 		} else {
 			suinos.remove(suinoRemovido);
+		}
+	}
+	
+	public void calcularVendaBovino(String identificador, Scanner sc, List<Bovino> bovinos, Double valorTotalVenda, List<Bovino> bovinosVenda, Arroba precoArroba, Venda venda, List<Venda> vendasBoi) {
+		int check = 0;
+		Bovino bovinoRemovido = null;
+		System.out.println("Digite o identificador do suíno: ");
+		identificador = sc.nextLine();
+		for (Bovino bovino : bovinos) {
+			if (bovino.getRegistroUnico().equals(identificador)) {
+				bovinosVenda.add(bovino);
+				bovinoRemovido = bovino;
+				valorTotalVenda = (valorTotalVenda + (bovino.getPeso() * precoArroba.getPreco()));
+				System.out.println(bovino.getRegistroUnico());
+				check = 1;
+				venda.setValorTotal(valorTotalVenda);
+				venda.setBovinos(bovinosVenda);
+				vendasBoi.add(venda);
+			}
+		}
+		System.out.println(check);
+		if (check == 0) {
+			System.out.println("Este animal não existe nos registros");
+		} else {
+			bovinos.remove(bovinoRemovido);
 		}
 	}
 	

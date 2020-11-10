@@ -143,9 +143,6 @@ public class Menu {
 					
 					switch (menu3) {
 					case 1:
-						break;
-
-					case 2:
 						///////////////////////// FUTURA FUNCAO////////////////////////
 						String identificador = "0";
 						String dataVenda = null;
@@ -153,11 +150,36 @@ public class Menu {
 						System.out.println("Entre com a data da venda");
 						dataVenda = sc.nextLine();
 						Venda venda = new Venda(dataVenda);
-						List<Suino> suinosVenda = new ArrayList<Suino>();
+						List<Bovino> bovinosVenda = new ArrayList<Bovino>();
+						relatorios.registroUnicoBovino(bovinos);
 						///////////////////////// FUTURA FUNCAO////////////////////////
 						menu4 = 100;
 						while (menu4 != 0) {
-							calcular.vendaSuino(identificador, sc, suinos, valorTotalVenda, suinosVenda, precoArroba, venda, vendasPorco);
+							calcular.calcularVendaBovino(identificador, sc, bovinos, valorTotalVenda, bovinosVenda, precoArroba, venda, vendasBoi);
+							String continuarVenda = "nao";
+							System.out.println("Deseja continuar? (Digite 'sim' para continuar)");
+							continuarVenda = sc.nextLine();
+							if(!continuarVenda.equals("sim")) {
+								menu4 = 0;
+							}
+							/////////////////////////////////////////////////////////////
+						}
+						break;
+
+					case 2:
+						///////////////////////// FUTURA FUNCAO////////////////////////
+						String identificador1 = "0";
+						String dataVenda1 = null;
+						double valorTotalVenda1 = 0;
+						System.out.println("Entre com a data da venda");
+						dataVenda = sc.nextLine();
+						Venda venda1 = new Venda(dataVenda);
+						List<Suino> suinosVenda = new ArrayList<Suino>();
+						relatorios.registroUnicoSuino(suinos);
+						///////////////////////// FUTURA FUNCAO////////////////////////
+						menu4 = 100;
+						while (menu4 != 0) {
+							calcular.calcularVendaSuino(identificador1, sc, suinos, valorTotalVenda1, suinosVenda, precoArroba, venda1, vendasPorco);
 							String continuarVenda = "nao";
 							System.out.println("Deseja continuar? (Digite 'sim' para continuar)");
 							continuarVenda = sc.nextLine();
