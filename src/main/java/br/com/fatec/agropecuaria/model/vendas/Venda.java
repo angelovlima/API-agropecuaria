@@ -13,29 +13,31 @@ import lombok.NoArgsConstructor;
 @Data
 public class Venda {
 	private String dataVenda;
-	private Double valorTotal;
+	private Double valorTotalArroba;
+	private Double valorTotalQuilo;
 	private List<Suino> suinos;
 	private List<Bovino> bovinos;
 
-	public Venda(String dataVenda, Double valorTotal, List<Suino> suinos) {
+	public Venda(String dataVenda, Double valorTotalArroba, List<Suino> suinos) {
 		this.dataVenda = dataVenda;
-		this.valorTotal = valorTotal;
+		this.valorTotalArroba = valorTotalArroba;
+		
 		this.suinos = suinos;
 	}
 	
-	public Venda(String dataVenda, List<Bovino> bovinos, Double valorTotal) {
+	public Venda(String dataVenda, List<Bovino> bovinos, Double valorTotalArroba) {
 		this.dataVenda = dataVenda;
-		this.valorTotal = valorTotal;
+		this.valorTotalArroba = valorTotalArroba;
 		this.bovinos = bovinos;
 	}
 	
-	public Venda(String dataVenda, Double valorTotal) {
+	public Venda(String dataVenda, Double valorTotalArroba) {
 		this.dataVenda = dataVenda;
-		this.valorTotal = valorTotal;
+		this.valorTotalArroba = valorTotalArroba;
 	}
 	
 	public Venda(String dataVenda) {
 		this.dataVenda = dataVenda;
-		this.valorTotal = valorTotal;
+		
 	}
 }

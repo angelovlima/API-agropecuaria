@@ -220,7 +220,7 @@ public class Calculador {
 		return precoSuino;
 	}
 	
-	public void calcularVendaSuino(String identificador, Scanner sc, List<Suino> suinos, Double valorTotalVenda, List<Suino> suinosVenda, Arroba precoArroba, Venda venda, List<Venda> vendasPorco) {
+	public void calcularVendaSuino(String identificador, Scanner sc, List<Suino> suinos, Double valorTotalArroba, Double valorTotalQuilo, List<Suino> suinosVenda, Arroba precoArroba, Quilo precoQuilo, Venda venda, List<Venda> vendasPorco) {
 		int check = 0;
 		Suino suinoRemovido = null;
 		System.out.println("Digite o identificador do suíno: ");
@@ -229,10 +229,12 @@ public class Calculador {
 			if (suino.getRegistroUnico().equals(identificador)) {
 				suinosVenda.add(suino);
 				suinoRemovido = suino;
-				valorTotalVenda = (valorTotalVenda + (suino.getPeso() * precoArroba.getPreco()));
+				valorTotalArroba = (valorTotalArroba + (suino.getPeso() * precoArroba.getPreco()));
+				valorTotalQuilo += (suino.getPeso()*15) * precoQuilo.getPreco();
 				System.out.println(suino.getRegistroUnico());
 				check = 1;
-				venda.setValorTotal(valorTotalVenda);
+				venda.setValorTotalArroba(valorTotalArroba);
+				venda.setValorTotalQuilo(valorTotalQuilo);
 				venda.setSuinos(suinosVenda);
 				vendasPorco.add(venda);
 			}
@@ -243,9 +245,10 @@ public class Calculador {
 		} else {
 			suinos.remove(suinoRemovido);
 		}
+
 	}
 	
-	public void calcularVendaBovino(String identificador, Scanner sc, List<Bovino> bovinos, Double valorTotalVenda, List<Bovino> bovinosVenda, Arroba precoArroba, Venda venda, List<Venda> vendasBoi) {
+	public void calcularVendaBovino(String identificador, Scanner sc, List<Bovino> bovinos, Double valorTotalArroba, Double valorTotalQuilo, List<Bovino> bovinosVenda, Arroba precoArroba, Quilo precoQuilo, Venda venda, List<Venda> vendasBoi) {
 		int check = 0;
 		Bovino bovinoRemovido = null;
 		System.out.println("Digite o identificador do suíno: ");
@@ -254,10 +257,12 @@ public class Calculador {
 			if (bovino.getRegistroUnico().equals(identificador)) {
 				bovinosVenda.add(bovino);
 				bovinoRemovido = bovino;
-				valorTotalVenda = (valorTotalVenda + (bovino.getPeso() * precoArroba.getPreco()));
+				valorTotalArroba = (valorTotalArroba + (bovino.getPeso() * precoArroba.getPreco()));
+				valorTotalQuilo += (bovino.getPeso()*15) * precoQuilo.getPreco();
 				System.out.println(bovino.getRegistroUnico());
 				check = 1;
-				venda.setValorTotal(valorTotalVenda);
+				venda.setValorTotalArroba(valorTotalArroba);
+				venda.setValorTotalQuilo(valorTotalQuilo);
 				venda.setBovinos(bovinosVenda);
 				vendasBoi.add(venda);
 			}
@@ -268,6 +273,7 @@ public class Calculador {
 		} else {
 			bovinos.remove(bovinoRemovido);
 		}
+	
 	}
 	
 }

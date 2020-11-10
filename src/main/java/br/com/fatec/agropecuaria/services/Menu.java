@@ -137,9 +137,11 @@ public class Menu {
 					switch (menu3) {
 					case 1:
 						///////////////////////// FUTURA FUNCAO////////////////////////
+						
 						String identificador = "0";
 						String dataVenda = null;
-						double valorTotalVenda = 0;
+						double valorTotalQuilo = 0;
+						double valorTotalArroba = 0;
 						System.out.println("Entre com a data da venda");
 						dataVenda = sc.nextLine();
 						Venda venda = new Venda(dataVenda);
@@ -148,7 +150,7 @@ public class Menu {
 						///////////////////////// FUTURA FUNCAO////////////////////////
 						menu4 = 100;
 						while (menu4 != 0) {
-							calcular.calcularVendaBovino(identificador, sc, bovinos, valorTotalVenda, bovinosVenda, precoArroba, venda, vendasBoi);
+							calcular.calcularVendaBovino(identificador, sc, bovinos, valorTotalArroba, valorTotalQuilo, bovinosVenda, precoArroba, precoQuilo, venda, vendasBoi);
 							String continuarVenda = "nao";
 							System.out.println("Deseja continuar? (Digite 'sim' para continuar)");
 							continuarVenda = sc.nextLine();
@@ -161,18 +163,20 @@ public class Menu {
 
 					case 2:
 						///////////////////////// FUTURA FUNCAO////////////////////////
+						
 						String identificador1 = "0";
 						String dataVenda1 = null;
-						double valorTotalVenda1 = 0;
+						double valorTotalArroba1 = 0;
+						double valorTotalQuilo1 = 0;
 						System.out.println("Entre com a data da venda");
-						dataVenda = sc.nextLine();
-						Venda venda1 = new Venda(dataVenda);
+						dataVenda1 = sc.nextLine();
+						Venda venda1 = new Venda(dataVenda1);
 						List<Suino> suinosVenda = new ArrayList<Suino>();
 						relatorios.registroUnicoSuino(suinos);
 						///////////////////////// FUTURA FUNCAO////////////////////////
 						menu4 = 100;
 						while (menu4 != 0) {
-							calcular.calcularVendaSuino(identificador1, sc, suinos, valorTotalVenda1, suinosVenda, precoArroba, venda1, vendasPorco);
+							calcular.calcularVendaSuino(identificador1, sc, suinos, valorTotalArroba1, valorTotalQuilo1, suinosVenda, precoArroba, precoQuilo, venda1, vendasPorco);
 							String continuarVenda = "nao";
 							System.out.println("Deseja continuar? (Digite 'sim' para continuar)");
 							continuarVenda = sc.nextLine();
@@ -185,7 +189,7 @@ public class Menu {
 						break;
 
 					case 3:
-						relatorios.registroVendas(vendasBoi, vendasPorco, precoArroba);
+						relatorios.registroVendas(vendasBoi, vendasPorco, precoArroba, precoQuilo);
 						break;
 
 					default:
