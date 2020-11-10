@@ -39,13 +39,13 @@ public class Relatorios {
 	
 	public void registroUnicoBovino(List<Bovino> bovinos) {
 		for (Bovino bovino: bovinos) {
-			System.out.println(bovino.getRegistroUnico());
+			System.out.println("Registro: "+bovino.getRegistroUnico());
 		}
 	}
 	
 	public void registroUnicoSuino(List<Suino> suinos) {
 		for (Suino suino: suinos) {
-			System.out.println(suino.getRegistroUnico());
+			System.out.println("Registro: "+suino.getRegistroUnico());
 		}
 	}
 	
