@@ -80,36 +80,29 @@ public class Menu {
 						relatorios.registroUnicoBovino(bovinos);
 						System.out.println("Digite o identificador do bovino: ");
 						identificador = sc.nextLine();
-
-						double bovinoArroba = calcular.calcularPrecoBovinoArroba(identificador, bovinos, precoArroba);
-						double bovinoQuilo = calcular.calcularPrecoBovinoQuilo(identificador, bovinos, precoQuilo);
-						totalPrecoArroba += bovinoArroba;
-						totalPrecoQuilo += bovinoQuilo;
-
-						System.out.println("Preço do Animal por Arroba: " + bovinoArroba);
-						System.out.println("Preço do Animal por Quilo: " + bovinoQuilo);
+						
+						
+						totalPrecoArroba = relatorios.precoUnicoBovinoArroba(identificador, bovinos, precoArroba, totalPrecoArroba);
+						totalPrecoQuilo = relatorios.precoUnicoBovinoQuilo(identificador, bovinos, precoQuilo, totalPrecoQuilo);
+		
 						break;
 
 					case 2:
 						relatorios.registroUnicoSuino(suinos);
 						System.out.println("Digite o identificador do suíno: ");
 						identificador = sc.nextLine();
+						
+						totalPrecoArroba = relatorios.precoUnicoSuinoArroba(identificador, suinos, precoArroba, totalPrecoArroba);
+						totalPrecoQuilo = relatorios.precoUnicoSuinoQuilo(identificador, suinos, precoQuilo, totalPrecoQuilo);
 
-						double suinoArroba = calcular.calcularPrecoSuinoArroba(identificador, suinos, precoArroba);
-						double suinoQuilo = calcular.calcularPrecoSuinoQuilo(identificador, suinos, precoQuilo);
-						totalPrecoArroba += suinoArroba;
-						totalPrecoQuilo += suinoQuilo;
-
-						System.out.println("Preço do Animal por Arroba: " + suinoArroba);
-						System.out.println("Preço do Animal por Quilo: " + suinoQuilo);
 						break;
 
 					default:
 						break;
 					}
-
-					System.out.println("\nPreço total em Arroba:" + totalPrecoArroba);
-					System.out.println("Preço total em Quilo: " + totalPrecoQuilo);
+					
+					relatorios.precoTotalArroba(totalPrecoArroba);
+					relatorios.precoTotalQuilo(totalPrecoQuilo);
 				}
 
 				break;
