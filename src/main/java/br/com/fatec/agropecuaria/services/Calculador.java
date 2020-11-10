@@ -54,14 +54,12 @@ public class Calculador {
 		double precoTotal = 0;
 		
 		for (Suino suino : suinos) {
-			System.out.println(preco.getPreco()+ "<-preço do porco\n" 
-		+precoTotal );
-			precoTotal = precoTotal + preco.getPreco() * suino.getPeso();
+			precoTotal = precoTotal + preco.getPreco() * (suino.getPeso() * 15);
 		}
 		for (Bovino bovino : bovinos) {
-			precoTotal = precoTotal + preco.getPreco() * bovino.getPeso() ;
+			precoTotal = precoTotal + preco.getPreco() * (bovino.getPeso() * 15) ;
 		}
-		return precoTotal * 15;
+		return precoTotal;
 	}
 	
 	public int calcularFemea(List<Bovino> bovinos, List<Suino> suinos) {
