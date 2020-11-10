@@ -28,7 +28,6 @@ public class BaseDados {
 			boi.setVacinas(popularListaVacinasBovino());
 			for (Vacina vacina : boi.getVacinas()) {
 				int numeroAleatorio = (gerador.nextInt(2)+1);
-				System.out.println(numeroAleatorio);
 				if(numeroAleatorio == 1) {
 					vacina.setVacinado(false);
 				} else {
@@ -36,15 +35,6 @@ public class BaseDados {
 					vacina.setAgendamento("20/20/2020");
 				}
 			}
-		}
-		for (Bovino bovino : bovinos) {
-			System.out.println("--------------------------");
-			System.out.println(bovino.getRegistroUnico());
-			System.out.println(bovino.getPeso());
-			System.out.println(bovino.getRaca());
-			System.out.println(bovino.getGenero());
-			System.out.println(bovino.getDataNascimento());
-			System.out.println("--------------------------");
 		}
 		return bovinos;
 	}
@@ -77,7 +67,6 @@ public class BaseDados {
 				porco.setVacinas(popularListaVacinasSuino());
 				for (Vacina vacina : porco.getVacinas()) {
 					int numeroAleatorio = (gerador.nextInt(2)+1);
-					System.out.println(numeroAleatorio);
 					if(numeroAleatorio == 1) {
 						vacina.setVacinado(true);
 						vacina.setAgendamento(null);
